@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "zoeysadditions",
+  "version": "${version}",
+
+  "name": "Zoey's Additions",
+  "description": "Adds a few bits and bobs here and there.",
+  "authors": [
+    "Zoey (Azophyte)"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "idk what this is lol",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.azo.zoeysadditions.ZoeysAdditions"
+    ],
+    "client": [
+      "net.azo.zoeysadditions.ZoeysAdditionsClient"
+    ]
+  },
+  "mixins": [
+    "zoeysadditions.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
