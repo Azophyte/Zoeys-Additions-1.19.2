@@ -18,6 +18,7 @@ public class ModItems {
                             .statusEffect(new StatusEffectInstance(REGENERATION, 300, 0), 100).build())));
     //TO DO: FIGURE OUT HOW TO ADD TOOLTIPS
     //TO DO: ADD LOVE EFFECT
+
     public static final Item RASPBERRY_RHODOLITE = registerItem("raspberry_rhodolite",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
     //TO DO: ASK ELO FOR GEM DESIGN, CREATE TEXTURE
