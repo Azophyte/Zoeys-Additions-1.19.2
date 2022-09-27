@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 5.0,
+  "group": "raspberry_rhodolite",
+  "ingredient": {
+    "item": "zoeysadditions:deepslate_raspberry_rhodolite_ore"
+  },
+  "result": "zoeysadditions:raspberry_rhodolite"
+}

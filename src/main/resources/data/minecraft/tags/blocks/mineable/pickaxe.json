@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "zoeysadditions:raspberry_rhodolite_ore",
+    "zoeysadditions:raspberry_rhodolite_block",
+    "zoeysadditions:deepslate_raspberry_rhodolite_ore",
+    "zoeysadditions:benitoite_block",
+    "zoeysadditions:benitoite_ore",
+    "zoeysadditions:deepslate_benitoite_ore"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 5.0,
+  "group": "benitoite",
+  "ingredient": {
+    "item": "zoeysadditions:deepslate_benitoite_ore"
+  },
+  "result": "zoeysadditions:benitoite"
+}
