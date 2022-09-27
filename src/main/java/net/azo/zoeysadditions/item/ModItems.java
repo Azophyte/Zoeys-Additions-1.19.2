@@ -20,11 +20,11 @@ public class ModItems {
     //TO DO: ADD LOVE EFFECT
 
     public static final Item RASPBERRY_RHODOLITE = registerItem("raspberry_rhodolite",
-            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS).fireproof()));
     //TO DO: ASK ELO FOR GEM DESIGN, CREATE TEXTURE
 
     public static final Item BENITOITE = registerItem("benitoite",
-            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS).fireproof()));
     //TO DO: ASK ELO FOR GEM DESIGN, CREATE TEXTURE
 
     private static Item registerItem(String name, Item item){
