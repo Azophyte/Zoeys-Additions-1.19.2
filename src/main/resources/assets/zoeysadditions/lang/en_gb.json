@@ -3,5 +3,12 @@
   "item.zoeysadditions.benitoite": "Benitoite",
   "item.zoeysadditions.cinnamon_bun": "Cinnamon Bun",
 
+  "block.zoeysadditions.benitoite_block": "Benitoite Block",
+  "block.zoeysadditions.benitoite_ore": "Benitoite Ore",
+  "block.zoeysadditions.deepslate_benitoite_ore": "Deepslate Benitoite Ore",
+  "block.zoeysadditions.raspberry_rhodolite_block": "Raspberry Rhodolite Block",
+  "block.zoeysadditions.raspberry_rhodolite_ore": "Raspberry Rhodolite Ore",
+  "block.zoeysadditions.deepslate_raspberry_rhodolite_ore": "Deepslate Raspberry Rhodolite Ore",
+
   "itemGroup.zoeysadditions.zoeysadditions": "Zoey's Additions"
 }

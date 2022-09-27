@@ -21,11 +21,9 @@ public class ModItems {
 
     public static final Item RASPBERRY_RHODOLITE = registerItem("raspberry_rhodolite",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS).fireproof()));
-    //TO DO: ASK ELO FOR GEM DESIGN, CREATE TEXTURE
 
     public static final Item BENITOITE = registerItem("benitoite",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS).fireproof()));
-    //TO DO: ASK ELO FOR GEM DESIGN, CREATE TEXTURE
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registry.ITEM, new Identifier(ZoeysAdditions.MOD_ID, name), item);
