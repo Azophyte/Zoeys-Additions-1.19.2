@@ -25,6 +25,15 @@ public class ModItems {
     public static final Item BENITOITE = registerItem("benitoite",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS).fireproof()));
 
+    public static final Item CINNAMON_STICK = registerItem("cinnamon_stick",
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
+
+    public static final Item GILDED_CINNAMON_STICK = registerItem("gilded_cinnamon_stick",
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
+
+    public static final Item JUNGLE_TWIG = registerItem("jungle_twig",
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registry.ITEM, new Identifier(ZoeysAdditions.MOD_ID, name), item);
 

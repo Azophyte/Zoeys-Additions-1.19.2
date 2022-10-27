@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.5,
+  "group": "benitoite",
+  "ingredient": {
+    "item": "zoeysadditions:jungle_twig"
+  },
+  "result": "zoeysadditions:cinnamon_stick"
+}
