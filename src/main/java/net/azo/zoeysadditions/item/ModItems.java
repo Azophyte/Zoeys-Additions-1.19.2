@@ -16,6 +16,11 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(7).saturationModifier(4)
                             .statusEffect(new StatusEffectInstance(REGENERATION, 300, 0), 100).build())));
+    public static final Item CANDY_APPLE = registerItem("candy_apple",
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(4)
+                            .statusEffect(new StatusEffectInstance(REGENERATION, 300, 0), 100).build())));
+
     //TO DO: FIGURE OUT HOW TO ADD TOOLTIPS
     //TO DO: ADD LOVE EFFECT
 
