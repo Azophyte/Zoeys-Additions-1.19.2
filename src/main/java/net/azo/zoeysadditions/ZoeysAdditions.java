@@ -2,6 +2,7 @@ package net.azo.zoeysadditions;
 
 import net.azo.zoeysadditions.block.ModBlocks;
 import net.azo.zoeysadditions.item.ModItems;
+import net.azo.zoeysadditions.util.ModLootTableModifiers;
 import net.azo.zoeysadditions.world.feature.ModConfiguredFeatures;
 import net.azo.zoeysadditions.world.gen.ModOreGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -20,5 +21,6 @@ public class ZoeysAdditions implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModOreGeneration.generateOres();
+		ModLootTableModifiers.modifyLootTables();
 	}
 }
