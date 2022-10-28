@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zoeysadditions:cinnamon_stick"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "zoeysadditions:raspberry_tea"
+    }
+  ],
+  "result": {
+    "item": "zoeysadditions:herbal_tea"
+  }
+}

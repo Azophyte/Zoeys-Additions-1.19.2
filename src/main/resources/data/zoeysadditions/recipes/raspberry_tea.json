@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+    "item": "minecraft:potion"
+    }
+  ],
+  "result": {
+    "item": "zoeysadditions:raspberry_tea"
+  }
+}
