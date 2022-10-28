@@ -2,25 +2,46 @@ package net.azo.zoeysadditions.item;
 
 import net.azo.zoeysadditions.ZoeysAdditions;
 import net.azo.zoeysadditions.item.custom.CandyAppleItem;
+import net.azo.zoeysadditions.item.custom.TeaItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import static net.minecraft.entity.effect.StatusEffects.REGENERATION;
+
+import static net.minecraft.entity.effect.StatusEffects.*;
 
 
 public class ModItems {
     //THE CINNAMON BUN :O
     public static final Item CINNAMON_BUN = registerItem("cinnamon_bun",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
-                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(4)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(3)
                             .statusEffect(new StatusEffectInstance(REGENERATION, 150, 0), 100).build())));
 
     public static final Item CANDY_APPLE = registerItem("candy_apple",
             new CandyAppleItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(7).saturationModifier(2).build())));
+
+    public static final Item RASPBERRY_TEA = registerItem("raspberry_tea",
+            new TeaItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(1)
+                            .statusEffect(new StatusEffectInstance(REGENERATION, 150, 0), 100).build())));
+
+    public static final Item HERBAL_TEA = registerItem("herbal_tea",
+            new TeaItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(2)
+                            .statusEffect(new StatusEffectInstance(REGENERATION, 150, 0), 100).build())));
+
+    public static final Item GILDED_TEA = registerItem("gilded_tea",
+            new TeaItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(3)
+                            .statusEffect(new StatusEffectInstance(REGENERATION, 600, 0), 100)
+                            .statusEffect(new StatusEffectInstance(RESISTANCE, 600, 0), 100)
+                            .statusEffect(new StatusEffectInstance(SPEED, 600, 1), 100)
+                            .statusEffect(new StatusEffectInstance(ABSORPTION, 600, 0), 100)
+                            .build())));
 
     /*public static final Item CANDY_APPLE = registerItem("candy_apple",
             new CandyAppleItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
