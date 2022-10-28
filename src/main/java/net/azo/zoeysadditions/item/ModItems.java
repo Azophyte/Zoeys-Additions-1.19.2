@@ -1,6 +1,7 @@
 package net.azo.zoeysadditions.item;
 
 import net.azo.zoeysadditions.ZoeysAdditions;
+import net.azo.zoeysadditions.item.custom.CandyAppleItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.FoodComponent;
@@ -15,11 +16,16 @@ public class ModItems {
     public static final Item CINNAMON_BUN = registerItem("cinnamon_bun",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(7).saturationModifier(4)
-                            .statusEffect(new StatusEffectInstance(REGENERATION, 300, 0), 100).build())));
+                            .statusEffect(new StatusEffectInstance(REGENERATION, 150, 0), 100).build())));
+
     public static final Item CANDY_APPLE = registerItem("candy_apple",
-            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
-                    .food(new FoodComponent.Builder().hunger(2).saturationModifier(4)
-                            .statusEffect(new StatusEffectInstance(REGENERATION, 300, 0), 100).build())));
+            new CandyAppleItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(2).build())));
+
+    /*public static final Item CANDY_APPLE = registerItem("candy_apple",
+            new CandyAppleItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(3)
+                            .build())));*/
 
     //TO DO: FIGURE OUT HOW TO ADD TOOLTIPS
     //TO DO: ADD LOVE EFFECT
