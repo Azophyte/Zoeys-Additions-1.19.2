@@ -37,13 +37,15 @@ public class ModItems {
     public static final Item GILDED_TEA = registerItem("gilded_tea",
             new TeaItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(5).saturationModifier(3)
-                            .statusEffect(new StatusEffectInstance(REGENERATION, 600, 0), 100)
-                            .statusEffect(new StatusEffectInstance(RESISTANCE, 600, 0), 100)
-                            .statusEffect(new StatusEffectInstance(SPEED, 600, 1), 100)
-                            .statusEffect(new StatusEffectInstance(ABSORPTION, 600, 0), 100)
+                            .statusEffect(new StatusEffectInstance(REGENERATION, 36000, 0), 100)
+                            .statusEffect(new StatusEffectInstance(RESISTANCE, 36000, 0), 100)
+                            .statusEffect(new StatusEffectInstance(HASTE, 36000, 0), 100)
+                            .statusEffect(new StatusEffectInstance(HEALTH_BOOST, 36000, 0), 100)
                             .build())));
 
-    /*public static final Item CANDY_APPLE = registerItem("candy_apple",
+
+    /*
+    public static final Item CANDY_APPLE = registerItem("candy_apple",
             new CandyAppleItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(6).saturationModifier(3)
                             .build())));*/
