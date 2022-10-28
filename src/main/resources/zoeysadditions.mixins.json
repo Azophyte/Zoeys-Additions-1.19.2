@@ -4,6 +4,7 @@
   "package": "net.azo.zoeysadditions.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BrewingRecipeRegistryMixin"
   ],
   "client": [
     "ExampleMixin"

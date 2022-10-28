@@ -2,6 +2,7 @@ package net.azo.zoeysadditions;
 
 import net.azo.zoeysadditions.block.ModBlocks;
 import net.azo.zoeysadditions.item.ModItems;
+import net.azo.zoeysadditions.potion.ModPotions;
 import net.azo.zoeysadditions.util.ModLootTableModifiers;
 import net.azo.zoeysadditions.world.feature.ModConfiguredFeatures;
 import net.azo.zoeysadditions.world.gen.ModOreGeneration;
@@ -22,5 +23,8 @@ public class ZoeysAdditions implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModOreGeneration.generateOres();
 		ModLootTableModifiers.modifyLootTables();
+
+		//Effect goes here
+		//ModPotions.registerPotions();
 	}
 }
