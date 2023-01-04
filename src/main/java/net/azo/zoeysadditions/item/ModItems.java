@@ -1,12 +1,14 @@
 package net.azo.zoeysadditions.item;
 
 import net.azo.zoeysadditions.ZoeysAdditions;
+import net.azo.zoeysadditions.entity.ModEntities;
 import net.azo.zoeysadditions.item.custom.CandyAppleItem;
 import net.azo.zoeysadditions.item.custom.TeaItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -42,6 +44,10 @@ public class ModItems {
                             .statusEffect(new StatusEffectInstance(HASTE, 36000, 0), 100)
                             .statusEffect(new StatusEffectInstance(HEALTH_BOOST, 36000, 0), 100)
                             .build())));
+
+    public static final Item LADY_BEETLE_SPAWN_EGG = registerItem("ladybeetle_spawn_egg",
+            new SpawnEggItem(ModEntities.LADY_BEETLE,0xd50027, 0x160003,
+                    new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
 
 
     /*
