@@ -13,6 +13,6 @@ public class ModEntities {
         public static final EntityType<LadyBeetleEntity> LADY_BEETLE = Registry.register(
                 Registry.ENTITY_TYPE, new Identifier(ZoeysAdditions.MOD_ID, "ladybeetle"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, LadyBeetleEntity::new)
-                        .dimensions(EntityDimensions.fixed(0.4f, 1.5f)).build());
+                        .dimensions(EntityDimensions.fixed(0.45f, 0.15f)).build());
 
     }

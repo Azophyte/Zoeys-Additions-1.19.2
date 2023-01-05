@@ -13,7 +13,7 @@ public class LadyBeetleModel extends AnimatedGeoModel <LadyBeetleEntity> {
 
     @Override
     public Identifier getTextureResource(LadyBeetleEntity object) {
-        return new Identifier(ZoeysAdditions.MOD_ID, "textures/entity/ladybeetle/ladybeetle_5.png");
+        return LadyBeetleRenderer.LOCATION_BY_VARIANT.get(object.getVariant());
     }
 
     @Override
