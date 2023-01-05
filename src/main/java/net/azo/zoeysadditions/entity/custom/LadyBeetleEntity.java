@@ -142,24 +142,7 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
-    private LadyBeetleVariant randomLadyBeetleVariant(){
-        int variantSeed = nextInt(0,100);
-        if(0 <= variantSeed && variantSeed <= 3){
-            return LadyBeetleVariant.GOLD; //Gold
-        }else if(4 <= variantSeed && variantSeed <= 19){
-            return LadyBeetleVariant.ONE_DOT; //ONE_DOT
-        }else if(20 <= variantSeed && variantSeed <= 35){
-            return LadyBeetleVariant.TWO_DOT; //TWO_DOT
-        }else if(36 <= variantSeed && variantSeed <= 51){
-            return LadyBeetleVariant.THREE_DOT; //THREE_DOT
-        }else if(52 <= variantSeed && variantSeed <= 67){
-            return LadyBeetleVariant.FOUR_DOT; //FOUR_DOT
-        }else if(68 <= variantSeed && variantSeed <= 83){
-            return LadyBeetleVariant.FIVE_DOT; //FIVE_DOT
-        }else{
-            return LadyBeetleVariant.SIX_DOT; //SIX_DOT
-        }
-    }
+
     public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
         return false;
     }
@@ -192,6 +175,26 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
 
+    private LadyBeetleVariant randomLadyBeetleVariant(){
+        int variantSeed = nextInt(0,100);
+        //Spots one through six are each 16% chances, golden beetles are 4%.
+        if(0 <= variantSeed && variantSeed <= 3){
+            return LadyBeetleVariant.GOLD;
+        }else if(4 <= variantSeed && variantSeed <= 19){
+            return LadyBeetleVariant.ONE_DOT;
+        }else if(20 <= variantSeed && variantSeed <= 35){
+            return LadyBeetleVariant.TWO_DOT;
+        }else if(36 <= variantSeed && variantSeed <= 51){
+            return LadyBeetleVariant.THREE_DOT;
+        }else if(52 <= variantSeed && variantSeed <= 67){
+            return LadyBeetleVariant.FOUR_DOT;
+        }else if(68 <= variantSeed && variantSeed <= 83){
+            return LadyBeetleVariant.FIVE_DOT;
+        }else{
+            return LadyBeetleVariant.SIX_DOT;
+        }
+    }
+
     /* DANCING MECHANISM */
     private boolean songPlaying; //When this is true, the ladybeetle should stop trying to move for a while.
     @Nullable
@@ -216,4 +219,5 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
     public boolean isSongPlaying() {
         return this.songPlaying;
     }
+
 }
