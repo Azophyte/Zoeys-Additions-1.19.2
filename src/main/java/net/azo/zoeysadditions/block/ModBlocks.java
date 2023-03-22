@@ -1,16 +1,17 @@
 package net.azo.zoeysadditions.block;
 
 import net.azo.zoeysadditions.ZoeysAdditions;
+import net.azo.zoeysadditions.block.custom.RaspberryBushBlock;
 import net.azo.zoeysadditions.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.PickaxeItem;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -56,12 +57,19 @@ public class ModBlocks {
     //REQUIRES PICKAXE, UPDATE ME
     //I SHOULD DROP BENITOITE
 
+    public static final Block RASPBERRY_BUSH_BLOCK = registerBlockWithoutItem("raspberry_bush",
+            new RaspberryBushBlock(FabricBlockSettings.copyOf(Blocks.SWEET_BERRY_BUSH)));
+            //ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x3495eb, MY_BLOCK);
+
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
         return Registry.register(Registry.BLOCK, new Identifier(ZoeysAdditions.MOD_ID, name), block);
     }
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        return Registry.register(Registry.BLOCK, new Identifier(ZoeysAdditions.MOD_ID, name), block);
 
+    };
     private static Item registerBlockItem(String name, Block block, ItemGroup tab) {
         return Registry.register(Registry.ITEM, new Identifier(ZoeysAdditions.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(tab)));
