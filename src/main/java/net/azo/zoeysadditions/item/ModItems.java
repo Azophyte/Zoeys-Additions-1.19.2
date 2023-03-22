@@ -1,11 +1,13 @@
 package net.azo.zoeysadditions.item;
 
 import net.azo.zoeysadditions.ZoeysAdditions;
+import net.azo.zoeysadditions.block.ModBlocks;
 import net.azo.zoeysadditions.entity.ModEntities;
 import net.azo.zoeysadditions.item.custom.CandyAppleItem;
 import net.azo.zoeysadditions.item.custom.TeaItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
@@ -16,15 +18,19 @@ import static net.minecraft.entity.effect.StatusEffects.*;
 
 
 public class ModItems {
-    //THE CINNAMON BUN :O
+    //FOOD ITEMS
+    public static final Item RASPBERRY = registerItem("raspberry",
+            new AliasedBlockItem(ModBlocks.RASPBERRY_BUSH_BLOCK, new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(1).snack().build())));
+
     public static final Item CINNAMON_BUN = registerItem("cinnamon_bun",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
-                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(3)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(1)
                             .statusEffect(new StatusEffectInstance(REGENERATION, 150, 0), 100).build())));
 
     public static final Item CANDY_APPLE = registerItem("candy_apple",
             new CandyAppleItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
-                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(2).build())));
+                    .food(new FoodComponent.Builder().hunger(7).saturationModifier(1).build())));
 
     public static final Item RASPBERRY_TEA = registerItem("raspberry_tea",
             new TeaItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
@@ -33,32 +39,19 @@ public class ModItems {
 
     public static final Item HERBAL_TEA = registerItem("herbal_tea",
             new TeaItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
-                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(2)
+                    .food(new FoodComponent.Builder().hunger(3).saturationModifier(1)
                             .statusEffect(new StatusEffectInstance(REGENERATION, 150, 0), 100).build())));
 
     public static final Item GILDED_TEA = registerItem("gilded_tea",
             new TeaItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
-                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(3)
+                    .food(new FoodComponent.Builder().hunger(5).saturationModifier(2)
                             .statusEffect(new StatusEffectInstance(REGENERATION, 36000, 0), 100)
                             .statusEffect(new StatusEffectInstance(RESISTANCE, 36000, 0), 100)
                             .statusEffect(new StatusEffectInstance(HASTE, 36000, 0), 100)
                             .statusEffect(new StatusEffectInstance(HEALTH_BOOST, 36000, 0), 100)
                             .build())));
 
-    public static final Item LADY_BEETLE_SPAWN_EGG = registerItem("ladybeetle_spawn_egg",
-            new SpawnEggItem(ModEntities.LADY_BEETLE,0xd50027, 0x160003,
-                    new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
-
-
-    /*
-    public static final Item CANDY_APPLE = registerItem("candy_apple",
-            new CandyAppleItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
-                    .food(new FoodComponent.Builder().hunger(6).saturationModifier(3)
-                            .build())));*/
-
-    //TO DO: FIGURE OUT HOW TO ADD TOOLTIPS
-    //TO DO: ADD LOVE EFFECT
-
+    //MATERIALS
     public static final Item RASPBERRY_RHODOLITE = registerItem("raspberry_rhodolite",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS).fireproof()));
 
@@ -73,6 +66,11 @@ public class ModItems {
 
     public static final Item JUNGLE_TWIG = registerItem("jungle_twig",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
+
+    //MISC
+    public static final Item LADY_BEETLE_SPAWN_EGG = registerItem("ladybeetle_spawn_egg",
+            new SpawnEggItem(ModEntities.LADY_BEETLE,0xd50027, 0x160003,
+                    new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registry.ITEM, new Identifier(ZoeysAdditions.MOD_ID, name), item);
