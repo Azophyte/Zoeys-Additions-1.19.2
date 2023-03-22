@@ -1,5 +1,6 @@
 {
   "item.zoeysadditions.raspberry_rhodolite": "Raspberry Rhodolite",
+  "item.zoeysadditions.raspberry": "Raspberry",
   "item.zoeysadditions.benitoite": "Benitoite",
   "item.zoeysadditions.cinnamon_bun": "Cinnamon Bun",
   "item.zoeysadditions.cinnamon_stick": "Cinnamon Stick",
@@ -18,6 +19,9 @@
   "block.zoeysadditions.raspberry_rhodolite_block": "Raspberry Rhodolite Block",
   "block.zoeysadditions.raspberry_rhodolite_ore": "Raspberry Rhodolite Ore",
   "block.zoeysadditions.deepslate_raspberry_rhodolite_ore": "Deepslate Raspberry Rhodolite Ore",
+  "block.zoeysadditions.raspberry_bush": "Raspberry Bush",
 
-  "itemGroup.zoeysadditions.zoeysadditions": "Zoey's Additions"
+  "itemGroup.zoeysadditions.zoeysadditions": "Zoey's Additions",
+
+  "entity.zoeysadditions.ladybeetle": "Ladybeetle"
 }
