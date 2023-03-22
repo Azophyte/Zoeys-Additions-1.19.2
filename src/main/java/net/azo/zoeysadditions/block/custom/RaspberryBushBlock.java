@@ -136,6 +136,10 @@ public class RaspberryBushBlock extends Block implements Fertilizable {
 
     //This code is copy/pasted from the sweet berry bush code with some adjustments. I don't know how it works, but it does work, so I'm not touching it :)
     //It allows you to pick raspberries from the bush with right-click
+
+    public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos ){
+        return true;
+    }
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         int i = state.get(AGE);
         boolean bl = i == 3;

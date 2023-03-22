@@ -9,6 +9,7 @@ import net.azo.zoeysadditions.util.ModLootTableModifiers;
 import net.azo.zoeysadditions.world.feature.ModConfiguredFeatures;
 import net.azo.zoeysadditions.world.gen.ModOreGeneration;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,11 +28,10 @@ public class ZoeysAdditions implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModOreGeneration.generateOres();
 		ModLootTableModifiers.modifyLootTables();
-
 		GeckoLib.initialize();
-
 		FabricDefaultAttributeRegistry.register(ModEntities.LADY_BEETLE, LadyBeetleEntity.setAttributes());
 		//Effect goes here
 		//ModPotions.registerPotions();
+
 	}
 }
