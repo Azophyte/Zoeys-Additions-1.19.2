@@ -22,12 +22,6 @@ public class SoyaSeperatorBlock extends HorizontalFacingBlock {
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 10, 16);
-
-    @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
-    }
 
     @Nullable
     @Override

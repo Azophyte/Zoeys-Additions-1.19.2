@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zoeysadditions:block/soya_seperator"
+    },
+    "facing=south": {
+      "model": "zoeysadditions:block/soya_seperator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "zoeysadditions:block/soya_seperator",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "zoeysadditions:block/soya_seperator",
+      "y": 90
+    }
+  }
+}

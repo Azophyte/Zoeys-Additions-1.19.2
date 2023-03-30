@@ -1,24 +1,9 @@
 {
-	"credit": "Made with Blockbench",
-	"texture_size": [64, 64],
+	"parent": "minecraft:block/orientable_with_bottom",
 	"textures": {
-		"4": "soya_seperator_bottom",
-		"6": "soya_seperator_front",
-		"7": "soya_seperator_side",
-		"8": "soya_seperator_top"
-	},
-	"elements": [
-		{
-			"from": [0, 0, 0],
-			"to": [16, 16, 16],
-			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#6"},
-				"east": {"uv": [0, 0, 16, 16], "texture": "#7"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#7"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#7"},
-				"up": {"uv": [16, 16, 0, 0], "texture": "#8"},
-				"down": {"uv": [16, 0, 0, 16], "texture": "#4"}
-			}
-		}
-	]
+		"bottom": "zoeysadditions:block/soya_seperator_bottom",
+		"front": "zoeysadditions:block/soya_seperator_front",
+		"side": "zoeysadditions:block/soya_seperator_side",
+		"top": "zoeysadditions:block/soya_seperator_top"
+	}
 }
