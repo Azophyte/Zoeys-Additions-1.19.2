@@ -5,13 +5,17 @@
   "item.zoeysadditions.cinnamon_bun": "Cinnamon Bun",
   "item.zoeysadditions.cinnamon_stick": "Cinnamon Stick",
   "item.zoeysadditions.gilded_cinnamon_stick": "Gilded Cinnamon Stick",
+  "item.zoeysadditions.soya_beans": "Soya Beans",
   "item.zoeysadditions.jungle_twig": "Jungle Twig",
   "item.zoeysadditions.candy_apple": "Candy Apple",
-
+  "item.zoeysadditions.corvus_coin": "Corvus Coin",
+  "item.zoeysadditions.chorus_cake_slice": "Slice of Chorus Cake",
   "item.zoeysadditions.raspberry_tea": "Raspberry Tea",
   "item.zoeysadditions.herbal_tea": "Herbal Tea",
   "item.zoeysadditions.gilded_tea": "Gilded Tea",
   "item.zoeysadditions.ladybeetle_spawn_egg": "Ladybeetle Spawn Egg",
+  "item.zoeysadditions.soya_milk": "Soya Milk",
+  "item.zoeysadditions.heavy_cream": "Heavy Cream",
 
   "block.zoeysadditions.benitoite_block": "Benitoite Block",
   "block.zoeysadditions.benitoite_ore": "Benitoite Ore",
@@ -20,6 +24,7 @@
   "block.zoeysadditions.raspberry_rhodolite_ore": "Raspberry Rhodolite Ore",
   "block.zoeysadditions.deepslate_raspberry_rhodolite_ore": "Deepslate Raspberry Rhodolite Ore",
   "block.zoeysadditions.raspberry_bush": "Raspberry Bush",
+  "block.zoeysadditions.soya_crops": "Soya Crops",
 
   "itemGroup.zoeysadditions.zoeysadditions": "Zoey's Additions",
 

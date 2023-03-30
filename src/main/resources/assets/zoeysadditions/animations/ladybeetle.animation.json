@@ -4,7 +4,7 @@
 		"animation.ladybeetle.idle": {
 			"loop": true,
 			"bones": {
-				"Legs": {
+				"legs": {
 					"position": {
 						"vector": [0, 2, 0]
 					}
@@ -14,7 +14,7 @@
 		"animation.ladybeetle.idle-to-flying": {
 			"animation_length": 2.5,
 			"bones": {
-				"Ladybeetle": {
+				"ladybeetle": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -32,7 +32,7 @@
 						}
 					}
 				},
-				"Head": {
+				"head": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -42,7 +42,7 @@
 						}
 					}
 				},
-				"LeftElytron": {
+				"left_elytron": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -52,7 +52,7 @@
 						}
 					}
 				},
-				"RightElytron": {
+				"right_elytron": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -62,7 +62,7 @@
 						}
 					}
 				},
-				"LeftWing": {
+				"left_wing": {
 					"rotation": {
 						"0.1667": {
 							"vector": [0, 0, 0]
@@ -80,7 +80,7 @@
 						}
 					}
 				},
-				"RightWing": {
+				"right_wing": {
 					"rotation": {
 						"0.1667": {
 							"vector": [0, 0, 0]
@@ -98,7 +98,7 @@
 						}
 					}
 				},
-				"Legs": {
+				"legs": {
 					"position": {
 						"0.0": {
 							"vector": [0, 2, 0]
@@ -108,7 +108,7 @@
 						}
 					}
 				},
-				"Wings": {
+				"wings": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -124,7 +124,7 @@
 			"loop": true,
 			"animation_length": 0.16667,
 			"bones": {
-				"Ladybeetle": {
+				"ladybeetle": {
 					"rotation": {
 						"vector": [-10, 0, 0]
 					},
@@ -132,22 +132,22 @@
 						"vector": [0, 1, 0]
 					}
 				},
-				"Head": {
+				"head": {
 					"rotation": {
 						"vector": [5, 0, 0]
 					}
 				},
-				"LeftElytron": {
+				"left_elytron": {
 					"rotation": {
 						"vector": [0, 0, -50]
 					}
 				},
-				"RightElytron": {
+				"right_elytron": {
 					"rotation": {
 						"vector": [0, 0, 50]
 					}
 				},
-				"LeftWing": {
+				"left_wing": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 20, 0]
@@ -165,7 +165,7 @@
 						"vector": [1.5, 1, 1.5]
 					}
 				},
-				"RightWing": {
+				"right_wing": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, -20, 0]
@@ -183,7 +183,7 @@
 						"vector": [1.5, 1, 1.5]
 					}
 				},
-				"Wings": {
+				"wings": {
 					"position": {
 						"vector": [0, 0.2, 0]
 					}
@@ -193,7 +193,7 @@
 		"animation.ladybeetle.flying-to-idle": {
 			"animation_length": 2.5,
 			"bones": {
-				"Ladybeetle": {
+				"ladybeetle": {
 					"rotation": {
 						"0.0": {
 							"vector": [-10, 0, 0]
@@ -211,7 +211,7 @@
 						}
 					}
 				},
-				"Head": {
+				"head": {
 					"rotation": {
 						"0.0": {
 							"vector": [5, 0, 0]
@@ -221,7 +221,7 @@
 						}
 					}
 				},
-				"LeftElytron": {
+				"left_elytron": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, -50]
@@ -231,7 +231,7 @@
 						}
 					}
 				},
-				"RightElytron": {
+				"right_elytron": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 50]
@@ -241,7 +241,7 @@
 						}
 					}
 				},
-				"LeftWing": {
+				"left_wing": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 20, 0]
@@ -259,7 +259,7 @@
 						}
 					}
 				},
-				"RightWing": {
+				"right_wing": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, -20, 0]
@@ -277,7 +277,7 @@
 						}
 					}
 				},
-				"Legs": {
+				"legs": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -287,7 +287,7 @@
 						}
 					}
 				},
-				"Wings": {
+				"wings": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0.2, 0]
@@ -302,95 +302,11 @@
 				}
 			}
 		},
-		"animation.ladybeetle.old_dance": {
-			"loop": true,
-			"animation_length": 6.125,
-			"bones": {
-				"Ladybeetle": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.2083": {
-							"vector": [0, 0, -15]
-						},
-						"0.5833": {
-							"vector": [0, 0, 15]
-						},
-						"0.7917": {
-							"vector": [0, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, -15]
-						},
-						"1.375": {
-							"vector": [0, 0, 15]
-						},
-						"1.5833": {
-							"vector": [0, 0, 0]
-						},
-						"1.7917": {
-							"vector": [0, 0, -15]
-						},
-						"2.1667": {
-							"vector": [0, 0, 15]
-						},
-						"2.375": {
-							"vector": [0, 0, 0]
-						},
-						"2.5833": {
-							"vector": [0, 0, -15]
-						},
-						"2.9583": {
-							"vector": [0, 0, 0]
-						},
-						"3.2917": {
-							"vector": [0, 90, 0]
-						},
-						"3.7083": {
-							"vector": [0, 180, 0]
-						},
-						"4.0833": {
-							"vector": [0, 270, 0]
-						},
-						"4.5": {
-							"vector": [0, 360, 0]
-						},
-						"4.9167": {
-							"vector": [0, 450, 0]
-						},
-						"5.3333": {
-							"vector": [0, 540, 0]
-						},
-						"5.7083": {
-							"vector": [0, 630, 0]
-						},
-						"6.125": {
-							"vector": [0, 720, 0]
-						}
-					},
-					"position": {
-						"3.5": {
-							"vector": [0, 0, 0]
-						},
-						"3.875": {
-							"vector": [0, 0, 0]
-						},
-						"4.2917": {
-							"vector": [0, 0, 0]
-						},
-						"4.7083": {
-							"vector": [0, 0, 0]
-						}
-					}
-				}
-			}
-		},
 		"animation.ladybeetle.dance": {
 			"loop": true,
 			"animation_length": 6.7164,
 			"bones": {
-				"Ladybeetle": {
+				"ladybeetle": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -529,7 +445,7 @@
 						}
 					}
 				},
-				"Legs": {
+				"legs": {
 					"position": {
 						"vector": [0, 2, 0]
 					}
@@ -540,7 +456,7 @@
 			"loop": true,
 			"animation_length": 0.33333,
 			"bones": {
-				"Ladybeetle": {
+				"ladybeetle": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -563,7 +479,7 @@
 						}
 					}
 				},
-				"Legs": {
+				"legs": {
 					"position": {
 						"vector": [0, 2, 0]
 					}

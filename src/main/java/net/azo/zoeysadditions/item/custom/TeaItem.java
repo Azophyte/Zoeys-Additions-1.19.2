@@ -20,6 +20,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
+import static net.azo.zoeysadditions.item.custom.CommonFunctions.getReturnedStack;
+
 public class TeaItem extends Item{
 
     private static final int MAX_USE_TIME = 30;
@@ -38,20 +40,7 @@ public class TeaItem extends Item{
         if (!world.isClient) {
             user.removeStatusEffect(StatusEffects.POISON);
         }
-
-        if (stack.isEmpty()) {
-            return new ItemStack(Items.GLASS_BOTTLE);
-        } else {
-            if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
-                ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
-                PlayerEntity playerEntity = (PlayerEntity)user;
-                if (!playerEntity.getInventory().insertStack(itemStack)) {
-                    playerEntity.dropItem(itemStack, false);
-                }
-            }
-
-            return stack;
-        }
+        return getReturnedStack(stack, user);
     }
 
     public int getMaxUseTime(ItemStack stack) {
@@ -63,10 +52,6 @@ public class TeaItem extends Item{
     }
 
     public SoundEvent getDrinkSound() {
-        return SoundEvents.ENTITY_GENERIC_DRINK;
-    }
-
-    public SoundEvent getEatSound() {
         return SoundEvents.ENTITY_GENERIC_DRINK;
     }
 

@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Flutterer;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ai.brain.task.FollowMobTask;
 import net.minecraft.entity.ai.control.FlightMoveControl;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.PathNodeType;
@@ -16,10 +17,14 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
@@ -56,12 +61,12 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2f)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, -10f)
                 .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.3f);
-
     }
+
 
     @Override
 
-    protected void initGoals() {
+    /*protected void initGoals() {
         this.goalSelector.add(0, new EscapeDangerGoal(this, 1.5));
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, new WanderNearTargetGoal(this, 0.8, 3));
@@ -70,6 +75,15 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
         this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 3.0F));
         this.goalSelector.add(6, new LookAroundGoal(this));
         this.goalSelector.add(7, new WanderAroundFarGoal(this, 0.8));
+    }*/
+    protected void initGoals(){
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1.0));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 7.0F));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, LadyBeetleEntity.class, 1.0F));
+        this.goalSelector.add(4, new LookAroundGoal(this));
+        this.goalSelector.add(5, new FollowMobGoal(this, 1.2f, 3, 15));
     }
 
 
@@ -137,7 +151,6 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty,
                                  SpawnReason spawnReason, @Nullable EntityData entityData,
                                  @Nullable NbtCompound entityNbt) {
-        //LadyBeetleVariant variant = Util.getRandom(LadyBeetleVariant.values(), this.random);
         setVariant(randomLadyBeetleVariant());
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
@@ -162,9 +175,15 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant"));
+        }
+
+    public void setCustomName(@Nullable Text name) {
+        super.setCustomName(name);
+        if (name != null && name.getString().equals("Zoey")) {
+            this.setVariant(LadyBeetleVariant.TRANS);
+        }
     }
-    public LadyBeetleVariant getVariant() {
-        return LadyBeetleVariant.byId(this.getTypeVariant() & 255);
+    public LadyBeetleVariant getVariant() {return LadyBeetleVariant.byId(this.getTypeVariant() & 255);
     }
 
     private int getTypeVariant() {
@@ -175,25 +194,26 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
 
-    private LadyBeetleVariant randomLadyBeetleVariant(){
-        int variantSeed = nextInt(0,100);
-        //Spots one through six are each 16% chances, golden beetles are 4%.
-        if(0 <= variantSeed && variantSeed <= 3){
-            return LadyBeetleVariant.GOLD;
-        }else if(4 <= variantSeed && variantSeed <= 19){
-            return LadyBeetleVariant.ONE_DOT;
-        }else if(20 <= variantSeed && variantSeed <= 35){
-            return LadyBeetleVariant.TWO_DOT;
-        }else if(36 <= variantSeed && variantSeed <= 51){
-            return LadyBeetleVariant.THREE_DOT;
-        }else if(52 <= variantSeed && variantSeed <= 67){
-            return LadyBeetleVariant.FOUR_DOT;
-        }else if(68 <= variantSeed && variantSeed <= 83){
-            return LadyBeetleVariant.FIVE_DOT;
-        }else{
-            return LadyBeetleVariant.SIX_DOT;
+    private LadyBeetleVariant randomLadyBeetleVariant() {
+        int variantSeed = nextInt(0, 100);
+        if (0 <= variantSeed && variantSeed <= 2) {
+                return LadyBeetleVariant.GOLD;
+            } else if (3 <= variantSeed && variantSeed <= 18) {
+                return LadyBeetleVariant.ONE_DOT;
+            } else if (19 <= variantSeed && variantSeed <= 34) {
+                return LadyBeetleVariant.TWO_DOT;
+            } else if (35 <= variantSeed && variantSeed <= 50) {
+                return LadyBeetleVariant.THREE_DOT;
+            } else if (51 <= variantSeed && variantSeed <= 66) {
+                return LadyBeetleVariant.FOUR_DOT;
+            } else if (67 <= variantSeed && variantSeed <= 82) {
+                return LadyBeetleVariant.FIVE_DOT;
+            } else if (83 <= variantSeed && variantSeed <= 98) {
+                return LadyBeetleVariant.SIX_DOT;
+            } else {
+                return LadyBeetleVariant.TRANS;
+            }
         }
-    }
 
     /* DANCING MECHANISM */
     private boolean songPlaying; //When this is true, the ladybeetle should stop trying to move for a while.
@@ -208,9 +228,40 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
         if (!this.onGround && vec3d.y < 0.0) {
             this.setVelocity(vec3d.multiply(1.0, 0.6, 1.0));
         }
+
+        //This is really clunky but shouldn't be too big of an issue, will see if I can fix later
+        //If anybody else sees this, the reason this is done is that jigsaw blocks don't save variant data (mc bug)
+        //To have the correct variants spawn where they should, they'll be saved with these names instead.
+        //If I can figure out how these entities are created by jigsaws, it should be possible to fix this.
+        if (this.getCustomName() != null/* && this.getCustomName().toString().charAt(0) == '§'*/){
+            if (this.getCustomName().getString().equals("§setVariant_gold")) {
+                this.setVariant(LadyBeetleVariant.GOLD);
+                this.setCustomName(null);
+            } else if (this.getCustomName().getString().equals("§setVariant_1")) {
+                this.setVariant(LadyBeetleVariant.ONE_DOT);
+                this.setCustomName(null);
+            } else if (this.getCustomName().getString().equals("§setVariant_2")) {
+                this.setVariant(LadyBeetleVariant.TWO_DOT);
+                this.setCustomName(null);
+            } else if (this.getCustomName().getString().equals("§setVariant_3")) {
+                this.setVariant(LadyBeetleVariant.THREE_DOT);
+                this.setCustomName(null);
+            } else if (this.getCustomName().getString().equals("§setVariant_4")) {
+                this.setVariant(LadyBeetleVariant.FOUR_DOT);
+                this.setCustomName(null);
+            } else if (this.getCustomName().getString().equals("§setVariant_5")) {
+                this.setVariant(LadyBeetleVariant.FIVE_DOT);
+                this.setCustomName(null);
+            } else if (this.getCustomName().getString().equals("§setVariant_6")) {
+                this.setVariant(LadyBeetleVariant.SIX_DOT);
+                this.setCustomName(null);
+            } else if (this.getCustomName().getString().equals("§setVariant_trans")) {
+                this.setVariant(LadyBeetleVariant.TRANS);
+                this.setCustomName(null);
+            }
+        }
         super.tickMovement();
     }
-
     public void setNearbySongPlaying(BlockPos songPosition, boolean playing) {
         this.songSource = songPosition;
         this.songPlaying = playing;

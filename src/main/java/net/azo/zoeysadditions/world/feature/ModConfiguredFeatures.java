@@ -1,9 +1,16 @@
 package net.azo.zoeysadditions.world.feature;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.azo.zoeysadditions.ZoeysAdditions;
 import net.azo.zoeysadditions.block.ModBlocks;
+import net.minecraft.tag.TagKey;
+import net.minecraft.util.math.VerticalSurfaceType;
+import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.List;
 

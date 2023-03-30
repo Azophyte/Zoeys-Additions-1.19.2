@@ -2,6 +2,7 @@ package net.azo.zoeysadditions.block;
 
 import net.azo.zoeysadditions.ZoeysAdditions;
 import net.azo.zoeysadditions.block.custom.RaspberryBushBlock;
+import net.azo.zoeysadditions.block.custom.SoyaCrop;
 import net.azo.zoeysadditions.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -59,7 +60,9 @@ public class ModBlocks {
 
     public static final Block RASPBERRY_BUSH_BLOCK = registerBlockWithoutItem("raspberry_bush",
             new RaspberryBushBlock(FabricBlockSettings.copyOf(Blocks.SWEET_BERRY_BUSH)));
-            //ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x3495eb, MY_BLOCK);
+
+    public static final Block SOYA_CROP = registerBlockWithoutItem("soya_crop",
+            new SoyaCrop(FabricBlockSettings.copyOf(Blocks.POTATOES)));
 
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {

@@ -77,7 +77,7 @@ public class RaspberryBushBlock extends Block implements Fertilizable {
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BlockState blockBelow = world.getBlockState(pos.down());
         //If I am no longer above a suitable block, break
-        if (!(blockBelow.isIn(BlockTags.DIRT) || blockBelow.isOf(this))){
+        if (!((blockBelow.isIn(BlockTags.DIRT) || blockBelow.isOf(this) || blockBelow.isOf(Blocks.STRUCTURE_BLOCK) || blockBelow.isOf(Blocks.JIGSAW)))){
             world.breakBlock(pos, true);
         }
     }

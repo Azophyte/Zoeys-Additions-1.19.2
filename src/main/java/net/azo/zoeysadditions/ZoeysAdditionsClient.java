@@ -16,19 +16,15 @@ public class ZoeysAdditionsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RASPBERRY_BUSH_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOYA_CROP, RenderLayer.getCutout());
         EntityRendererRegistry.register(ModEntities.LADY_BEETLE, LadyBeetleRenderer::new);
 
-        //Color Registry Stuff
-        //ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x589957, ModBlocks.RASPBERRY_BUSH_BLOCK);
+        //Colour Registry Stuff
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             if (world == null || pos == null) {
                 return FoliageColors.getColor(0.5, 1.0);
             }
             return BiomeColors.getGrassColor(world, pos);
         }, ModBlocks.RASPBERRY_BUSH_BLOCK);
-
-        /*(ColorProviderRegistry.ITEM.register((stack, layer) -> {
-            return GrassColors.getColor(0.5, 1.0);
-        }, modItem);*/
     }
 }

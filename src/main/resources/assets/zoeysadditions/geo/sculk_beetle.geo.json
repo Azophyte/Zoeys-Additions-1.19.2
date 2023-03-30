@@ -1,0 +1,97 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 36,
+				"texture_height": 39,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Ladybeetle",
+					"pivot": [0, 0, 2]
+				},
+				{
+					"name": "Base",
+					"parent": "Ladybeetle",
+					"pivot": [0, 0, 2],
+					"cubes": [
+						{"origin": [-4, 0, -3], "size": [8, 3, 10], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Head",
+					"parent": "Base",
+					"pivot": [0, 2, -3],
+					"cubes": [
+						{"origin": [-2.5, 0.8, -5], "size": [5, 2, 3], "pivot": [0, -1, 2], "rotation": [5, 0, 0], "uv": [0, 25]}
+					]
+				},
+				{
+					"name": "Antennae",
+					"parent": "Head",
+					"pivot": [0, 2, -4],
+					"cubes": [
+						{"origin": [-2, 2.4, -7.2], "size": [4, 0, 3], "pivot": [0, 2, -5], "rotation": [-5, 0, 0], "uv": [15, 13]}
+					]
+				},
+				{
+					"name": "Wings",
+					"parent": "Base",
+					"pivot": [0, 2.75, -2]
+				},
+				{
+					"name": "LeftWing",
+					"parent": "Wings",
+					"pivot": [0, 2.75, -2],
+					"cubes": [
+						{"origin": [0.1, 2.85, -2], "size": [4, 0, 9], "uv": [-9, 30]}
+					]
+				},
+				{
+					"name": "RightWing",
+					"parent": "Wings",
+					"pivot": [0, 2.75, -2],
+					"cubes": [
+						{"origin": [0.1, 2.65, -2], "size": [4, 0, 9], "pivot": [0, 2.75, -2], "rotation": [0, 0, -180], "uv": [-1, 30]}
+					]
+				},
+				{
+					"name": "Elytra",
+					"parent": "Base",
+					"pivot": [0, 3, -2]
+				},
+				{
+					"name": "LeftElytron",
+					"parent": "Elytra",
+					"pivot": [0, 3, -2],
+					"cubes": [
+						{"origin": [0.15, 1.2, -3.2], "size": [4, 2, 10.4], "pivot": [0, 4, 2], "rotation": [0, 0, 1], "uv": [0, 13]}
+					]
+				},
+				{
+					"name": "RightElytron",
+					"parent": "Elytra",
+					"pivot": [0, 3, -2],
+					"cubes": [
+						{"origin": [0.15, 1.2, -3.2], "size": [4, 2, 10.4], "pivot": [0, 4, 2], "rotation": [0, 180, -1], "uv": [0, 13]}
+					]
+				},
+				{
+					"name": "Legs",
+					"parent": "Base",
+					"pivot": [0, 0, 2],
+					"cubes": [
+						{"origin": [-3, -2, -1], "size": [6, 2, 0], "pivot": [0, 0, -1], "rotation": [20, 0, 0], "uv": [16, 36]},
+						{"origin": [-3, -2, 2], "size": [6, 2, 0], "pivot": [0, 0, 2], "rotation": [20, 0, 0], "uv": [16, 36]},
+						{"origin": [-3, -2, 5], "size": [6, 2, 0], "pivot": [0, 0, 5], "rotation": [20, 0, 0], "uv": [16, 36]}
+					]
+				}
+			]
+		}
+	]
+}

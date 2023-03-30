@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "zoeysadditions:block/soya_crop_1"
+  }
+}

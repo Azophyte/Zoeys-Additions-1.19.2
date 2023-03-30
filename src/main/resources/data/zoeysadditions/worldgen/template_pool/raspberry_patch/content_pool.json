@@ -1,0 +1,78 @@
+{
+  "name": "zoeysadditions:raspberry_patch/content_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_gold",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 16,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_1",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 16,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_2",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 16,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_3",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 16,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_4",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 16,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_5",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 16,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_6",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "zoeysadditions:raspberry_patch_content_trans",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

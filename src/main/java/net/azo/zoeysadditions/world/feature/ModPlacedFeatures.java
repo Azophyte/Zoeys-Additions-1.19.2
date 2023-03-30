@@ -16,7 +16,6 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.RASPBERRY_RHODOLITE_ORE, modifiersWithCount(8, HeightRangePlacementModifier.uniform(YOffset.aboveBottom(8),
                     YOffset.aboveBottom(96))));
 
-
     private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
         return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
     }
