@@ -62,7 +62,7 @@ public class ModItems {
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(1).snack().build())));
 
     public static final Item HEAVY_CREAM = registerItem("heavy_cream",
-            new SoyaMilkItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+            new HeavyCreamItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(1).snack().build())));
 
     //MATERIALS
