@@ -17,9 +17,9 @@ import net.minecraft.world.World;
 
 import static net.azo.zoeysadditions.item.custom.CommonFunctions.getReturnedStack;
 
-public class HeavyCreamitem extends Item{
+public class HeavyCreamItem extends Item{
 
-    public HeavyCreamitem(Settings settings) {
+    public HeavyCreamItem(Settings settings) {
         super(settings);
     }
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
@@ -32,11 +32,16 @@ public class HeavyCreamitem extends Item{
     }
 
     public int getMaxUseTime(ItemStack stack) {
-        return 60;
+        return 90;
     }
 
     public UseAction getUseAction(ItemStack stack) {
         return UseAction.DRINK;
+    }
+
+    //This is stupidly necessary, whatever sound is put here will play at the end.
+    public SoundEvent getEatSound() {
+        return SoundEvents.ITEM_HONEY_BOTTLE_DRINK;
     }
 
     public SoundEvent getDrinkSound() {

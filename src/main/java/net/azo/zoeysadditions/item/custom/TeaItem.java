@@ -1,7 +1,5 @@
 package net.azo.zoeysadditions.item.custom;
 
-import net.azo.zoeysadditions.item.ModItems;
-import net.azo.zoeysadditions.mixin.BrewingRecipeRegistryMixin;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
@@ -10,7 +8,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
-import net.minecraft.potion.Potions;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -36,7 +33,6 @@ public class TeaItem extends Item{
             Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
-
         if (!world.isClient) {
             user.removeStatusEffect(StatusEffects.POISON);
         }
@@ -52,6 +48,11 @@ public class TeaItem extends Item{
     }
 
     public SoundEvent getDrinkSound() {
+        return SoundEvents.ENTITY_GENERIC_DRINK;
+    }
+
+    //This is stupidly necessary, whatever sound is put here will play at the end.
+    public SoundEvent getEatSound() {
         return SoundEvents.ENTITY_GENERIC_DRINK;
     }
 

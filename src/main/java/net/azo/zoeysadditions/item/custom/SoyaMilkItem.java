@@ -22,6 +22,7 @@ public class SoyaMilkItem extends Item{
     public SoyaMilkItem(Settings settings) {
         super(settings);
     }
+
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         super.finishUsing(stack, world, user);
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
@@ -43,6 +44,11 @@ public class SoyaMilkItem extends Item{
     }
 
     public SoundEvent getDrinkSound() {
+        return SoundEvents.ENTITY_GENERIC_DRINK;
+    }
+
+    //This is stupidly necessary, whatever sound is put here will play at the end.
+    public SoundEvent getEatSound() {
         return SoundEvents.ENTITY_GENERIC_DRINK;
     }
 
