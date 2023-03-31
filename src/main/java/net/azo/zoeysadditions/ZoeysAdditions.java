@@ -1,10 +1,12 @@
 package net.azo.zoeysadditions;
 
 import net.azo.zoeysadditions.block.ModBlocks;
+import net.azo.zoeysadditions.block.entity.ModBlockEntities;
 import net.azo.zoeysadditions.entity.ModEntities;
 import net.azo.zoeysadditions.entity.custom.LadyBeetleEntity;
 import net.azo.zoeysadditions.item.ModItems;
 import net.azo.zoeysadditions.potion.ModPotions;
+import net.azo.zoeysadditions.screen.ModScreenHandlers;
 import net.azo.zoeysadditions.util.ModLootTableModifiers;
 import net.azo.zoeysadditions.world.feature.ModConfiguredFeatures;
 import net.azo.zoeysadditions.world.gen.ModOreGeneration;
@@ -30,6 +32,8 @@ public class ZoeysAdditions implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 		GeckoLib.initialize();
 		FabricDefaultAttributeRegistry.register(ModEntities.LADY_BEETLE, LadyBeetleEntity.setAttributes());
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerAllScreenHandlers();
 		//Effect goes here
 		//ModPotions.registerPotions();
 

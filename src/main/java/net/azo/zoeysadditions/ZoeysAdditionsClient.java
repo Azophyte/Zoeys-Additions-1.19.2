@@ -3,6 +3,8 @@ package net.azo.zoeysadditions;
 import net.azo.zoeysadditions.block.ModBlocks;
 import net.azo.zoeysadditions.entity.ModEntities;
 import net.azo.zoeysadditions.entity.client.LadyBeetleRenderer;
+import net.azo.zoeysadditions.screen.ModScreenHandlers;
+import net.azo.zoeysadditions.screen.SoyaSeparatorScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -10,6 +12,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.color.world.GrassColors;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 
 public class ZoeysAdditionsClient implements ClientModInitializer {
@@ -26,5 +29,7 @@ public class ZoeysAdditionsClient implements ClientModInitializer {
             }
             return BiomeColors.getGrassColor(world, pos);
         }, ModBlocks.RASPBERRY_BUSH_BLOCK);
+
+        HandledScreens.register(ModScreenHandlers.SOYA_SEPARATOR_SCREEN_HANDLER, SoyaSeparatorScreen :: new);
     }
 }

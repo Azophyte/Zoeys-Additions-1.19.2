@@ -19,5 +19,7 @@
       "item": "minecraft:smooth_stone"
     }
   },
-  "result": {}
+  "result": {
+    "item": "zoeysadditions:soya_separator"
+  }
 }
