@@ -3,9 +3,8 @@ package net.azo.zoeysadditions.block;
 import net.azo.zoeysadditions.ZoeysAdditions;
 import net.azo.zoeysadditions.block.custom.RaspberryBushBlock;
 import net.azo.zoeysadditions.block.custom.SoyaCrop;
-import net.azo.zoeysadditions.block.custom.SoyaSeperatorBlock;
+import net.azo.zoeysadditions.block.custom.SoyaSeparatorBlock;
 import net.azo.zoeysadditions.item.ModItemGroup;
-import net.fabricmc.fabric.api.block.v1.FabricBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -66,8 +65,8 @@ public class ModBlocks {
     public static final Block SOYA_CROP = registerBlockWithoutItem("soya_crop",
             new SoyaCrop(FabricBlockSettings.copyOf(Blocks.POTATOES)));
 
-    public static final Block SOYA_SEPERATOR_BLOCK = registerBlock("soya_seperator",
-            new SoyaSeperatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(4f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
+    public static final Block SOYA_SEPARATOR_BLOCK = registerBlock("soya_separator",
+            new SoyaSeparatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(4f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);

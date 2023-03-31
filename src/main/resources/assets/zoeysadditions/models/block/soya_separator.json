@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/orientable_with_bottom",
+	"textures": {
+		"bottom": "zoeysadditions:block/soya_separator_bottom",
+		"front": "zoeysadditions:block/soya_separator_front",
+		"side": "zoeysadditions:block/soya_separator_side",
+		"top": "zoeysadditions:block/soya_separator_top"
+	}
+}
