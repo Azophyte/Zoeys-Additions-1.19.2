@@ -66,8 +66,8 @@ public class ModBlocks {
     public static final Block SOYA_CROP = registerBlockWithoutItem("soya_crop",
             new SoyaCrop(FabricBlockSettings.copyOf(Blocks.POTATOES)));
 
-    public static final Block SOYA_SEPERATOR_BLOCK = registerBlockWithoutItem("soya_seperator",
-            new SoyaSeperatorBlock(FabricBlockSettings.copyOf(Blocks.SMOKER)));
+    public static final Block SOYA_SEPERATOR_BLOCK = registerBlock("soya_seperator",
+            new SoyaSeperatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(4f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
