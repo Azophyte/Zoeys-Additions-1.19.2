@@ -65,6 +65,14 @@ public class ModItems {
             new HeavyCreamItem(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(1).snack().build())));
 
+    public static final Item ROASTED_PUMPKIN_SEEDS = registerItem("roasted_pumpkin_seeds",
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(1).snack().build())));
+
+    public static final Item ROASTED_MELON_SEEDS = registerItem("roasted_melon_seeds",
+            new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
+                    .food(new FoodComponent.Builder().hunger(1).saturationModifier(1).snack().build())));
+
     //MATERIALS
     public static final Item RASPBERRY_RHODOLITE = registerItem("raspberry_rhodolite",
             new Item(new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS).fireproof()));
