@@ -7,10 +7,7 @@ import net.azo.zoeysadditions.block.custom.SoyaSeparatorBlock;
 import net.azo.zoeysadditions.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
-import net.minecraft.block.OreBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -21,43 +18,28 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
 
-    //RASPBERRY RHODOLITE BLOCKS
-
     public static final Block RASPBERRY_RHODOLITE_BLOCK = registerBlock("raspberry_rhodolite_block",
-            new Block(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).strength(4f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
-    //REQUIRES PICKAXE, UPDATE ME
-    //I SHOULD HAVE CUSTOM SFX
+            new Block(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).hardness(5f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
 
     public static final Block RASPBERRY_RHODOLITE_ORE = registerBlock("raspberry_rhodolite_ore",
-            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool(),
+            new OreBlock(FabricBlockSettings.of(Material.STONE).hardness(2.5f).requiresTool(),
         UniformIntProvider.create(10, 20)), ModItemGroup.ZOEYSADDITIONS);
-    //REQUIRES PICKAXE, UPDATE ME
-    //I SHOULD DROP RASPBERRY RHODOLITE
 
     public static final Block DEEPSLATE_RASPBERRY_RHODOLITE_ORE = registerBlock("deepslate_raspberry_rhodolite_ore",
-            new OreBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.DEEPSLATE).strength(4f).requiresTool(),
+            new OreBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.DEEPSLATE).hardness(4f).requiresTool(),
                     UniformIntProvider.create(10, 20)), ModItemGroup.ZOEYSADDITIONS);
-    //REQUIRES PICKAXE, UPDATE ME
-    //I SHOULD DROP RASPBERRY RHODOLITE
 
-    //BENITOITE BLOCKS
 
     public static final Block BENITOITE_BLOCK = registerBlock("benitoite_block",
-            new Block(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).strength(4f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
-    //REQUIRES PICKAXE, UPDATE ME
-    //I SHOULD HAVE CUSTOM SFX
+            new Block(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).hardness(5f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
 
     public static final Block BENITOITE_ORE = registerBlock("benitoite_ore",
-            new OreBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool(),
+            new OreBlock(FabricBlockSettings.of(Material.STONE).hardness(2.5f).requiresTool(),
                     UniformIntProvider.create(10, 20)), ModItemGroup.ZOEYSADDITIONS);
-    //REQUIRES PICKAXE, UPDATE ME
-    //I SHOULD DROP BENITOITE
 
     public static final Block DEEPSLATE_BENITOITE_ORE = registerBlock("deepslate_benitoite_ore",
-            new OreBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.DEEPSLATE).strength(4f).requiresTool(),
+            new OreBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.DEEPSLATE).hardness(4f).requiresTool(),
                     UniformIntProvider.create(10, 20)), ModItemGroup.ZOEYSADDITIONS);
-    //REQUIRES PICKAXE, UPDATE ME
-    //I SHOULD DROP BENITOITE
 
     public static final Block RASPBERRY_BUSH_BLOCK = registerBlockWithoutItem("raspberry_bush",
             new RaspberryBushBlock(FabricBlockSettings.copyOf(Blocks.SWEET_BERRY_BUSH)));
@@ -66,7 +48,12 @@ public class ModBlocks {
             new SoyaCrop(FabricBlockSettings.copyOf(Blocks.POTATOES)));
 
     public static final Block SOYA_SEPARATOR_BLOCK = registerBlock("soya_separator",
-            new SoyaSeparatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(4f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
+            new SoyaSeparatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE)
+                    .hardness(1.8f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
+
+    public static final Block CHORUS_CAKE_BLOCK = registerBlock("chorus_cake",
+            new CakeBlock((FabricBlockSettings.of(Material.CAKE).sounds(BlockSoundGroup.WOOL))),
+            ModItemGroup.ZOEYSADDITIONS);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
