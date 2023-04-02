@@ -1,9 +1,7 @@
 package net.azo.zoeysadditions.block;
 
 import net.azo.zoeysadditions.ZoeysAdditions;
-import net.azo.zoeysadditions.block.custom.RaspberryBushBlock;
-import net.azo.zoeysadditions.block.custom.SoyaCrop;
-import net.azo.zoeysadditions.block.custom.SoyaSeparatorBlock;
+import net.azo.zoeysadditions.block.custom.*;
 import net.azo.zoeysadditions.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -54,6 +52,13 @@ public class ModBlocks {
     public static final Block CHORUS_CAKE_BLOCK = registerBlock("chorus_cake",
             new CakeBlock((FabricBlockSettings.of(Material.CAKE).sounds(BlockSoundGroup.WOOL))),
             ModItemGroup.ZOEYSADDITIONS);
+
+    public static final Block BLAZING_BAMBOO_BLOCK = registerBlock("blazing_bamboo",
+            new BlazingBambooBlock(FabricBlockSettings.of(Material.BAMBOO).sounds(BlockSoundGroup.BAMBOO)),
+            ModItemGroup.ZOEYSADDITIONS);
+
+    public static final Block BLAZING_BAMBOO_DRUPE_BLOCK = registerBlockWithoutItem("blazing_bamboo_drupe",
+            new BlazingBambooBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC).sounds(BlockSoundGroup.SHROOMLIGHT)));
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
