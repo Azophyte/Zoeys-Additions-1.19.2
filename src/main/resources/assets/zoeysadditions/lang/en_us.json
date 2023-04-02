@@ -16,6 +16,9 @@
   "item.zoeysadditions.ladybeetle_spawn_egg": "Ladybeetle Spawn Egg",
   "item.zoeysadditions.soya_milk": "Soya Milk",
   "item.zoeysadditions.heavy_cream": "Heavy Cream",
+  "item.zoeysadditions.roasted_melon_seeds": "Roasted Melon Seeds",
+  "item.zoeysadditions.roasted_pumpkin_seeds": "Roasted Pumpkin Seeds",
+  "item.zoeysadditions.chorus_cake": "Chorus Cake",
 
   "block.zoeysadditions.benitoite_block": "Benitoite Block",
   "block.zoeysadditions.benitoite_ore": "Benitoite Ore",
@@ -26,6 +29,7 @@
   "block.zoeysadditions.raspberry_bush": "Raspberry Bush",
   "block.zoeysadditions.soya_crops": "Soya Crops",
   "block.zoeysadditions.soya_separator": "Soya Separator",
+  "block.zoeysadditions.chorus_cake": "Chorus Cake",
 
   "itemGroup.zoeysadditions.zoeysadditions": "Zoey's Additions",
 
