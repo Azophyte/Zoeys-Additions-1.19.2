@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "minecraft:melon_seeds"
+  },
+  "result": "zoeysadditions:roasted_melon_seeds",
+  "experience": 0.1,
+  "cookingtime": 100
+}
