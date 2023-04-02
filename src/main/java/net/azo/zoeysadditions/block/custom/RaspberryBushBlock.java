@@ -134,7 +134,8 @@ public class RaspberryBushBlock extends Block implements Fertilizable {
         }
     }
 
-    //This code is copy/pasted from the sweet berry bush code with some adjustments. I don't know how it works, but it does work, so I'm not touching it :)
+    //This code is copy/pasted from the sweet berry bush code with some adjustments.
+    // I don't know how it works, but it does work, so I'm not touching it :)
     //It allows you to pick raspberries from the bush with right-click
 
     public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos ){

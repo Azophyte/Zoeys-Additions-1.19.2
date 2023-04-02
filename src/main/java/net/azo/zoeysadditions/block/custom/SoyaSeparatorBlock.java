@@ -2,6 +2,7 @@ package net.azo.zoeysadditions.block.custom;
 
 import net.azo.zoeysadditions.block.entity.ModBlockEntities;
 import net.azo.zoeysadditions.block.entity.SoyaSeparatorBlockEntity;
+import net.azo.zoeysadditions.screen.SoyaSeparatorScreenHandler;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -9,6 +10,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
@@ -47,6 +49,15 @@ public class SoyaSeparatorBlock extends BlockWithEntity implements BlockEntityPr
         builder.add(FACING);
     }
 
+
+    /* COMPARATOR STUFF */
+    public boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
+
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return SoyaSeparatorScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
+    }
     /* BLOCK ENTITY STUFF */
     @Override
     public BlockRenderType getRenderType(BlockState state){

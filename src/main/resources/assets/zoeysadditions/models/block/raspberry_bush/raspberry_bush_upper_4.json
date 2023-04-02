@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [24, 16],
 	"textures": {
-		"0": "zoeysadditions:block/raspberry_bush_lower_4",
-		"overlay": "zoeysadditions:block/raspberry_bush_lower_overlay",
-		"particle": "zoeysadditions:block/raspberry_bush_lower_3"
+		"0": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_4",
+		"overlay": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_overlay",
+		"particle": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_3"
 	},
 	"elements": [
 		{

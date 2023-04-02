@@ -2,14 +2,11 @@ package net.azo.zoeysadditions.block.entity;
 
 import net.azo.zoeysadditions.item.ModItems;
 import net.azo.zoeysadditions.screen.SoyaSeparatorScreenHandler;
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -26,7 +23,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Random;
 
 import static org.apache.commons.lang3.RandomUtils.nextInt;
 
@@ -103,62 +99,70 @@ private final DefaultedList<ItemStack> inventory =
         if (world.isClient()){
             return;
         }
-
-        if(hasRecipe(entity)) {
+        if(hasRecipe(entity) && entity.progress == 0) {
+            entity.removeStack(0, 1);
             entity.progress++;
             markDirty(world, blockPos, blockState);
-            if(entity.progress >= entity.maxProgress) {
-                craftItem(entity);
-            }
-        } else {
-            entity.resetProgress();
+
+        } else if (entity.progress >= 1 && entity.progress < entity.maxProgress) {
+            entity.progress++;
             markDirty(world, blockPos, blockState);
+        } else {
+            if(entity.progress >= entity.maxProgress) {
+
+                if ((entity.getStack(2).isOf(ModItems.SOYA_MILK) || entity.getStack(2).isEmpty())
+                && (entity.getStack(3).isOf(ModItems.HEAVY_CREAM) || entity.getStack(3).isEmpty())
+                && entity.getStack(2).getCount() < 64 && entity.getStack(3).getCount() < 64
+                && !(entity.getStack(1).isEmpty())){
+                    //IF Slot one is either empty or contains less than a stack of soya milk
+                    //AND slot two is either empty or contains less than a stack of heavy cream
+                    //AND there is a bottle available:
+                    craftItem(entity);
+                    entity.resetProgress();
+                    markDirty(world, blockPos, blockState);
+                }
+            }
         }
     }
 
     private static void craftItem(SoyaSeparatorBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(entity.size());
+        /*SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
-        }
+        }*/
+            //entity.removeStack(0, 1);
 
-        if(hasRecipe(entity)) {
-            entity.removeStack(0, 1);
-
-            switch(nextInt(0, 3)) { //Each option has a 33% chance
-                case 0: //Take glass bottle from slot 1, add soya milk to slot 2, play brewing stand sound
-                    entity.removeStack(1, 1);
-                    entity.setStack(2, new ItemStack(ModItems.SOYA_MILK,
-                            entity.getStack(2).getCount() + 1));
-                    entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
-                            SoundCategory.PLAYERS, 1f, 1.5f);
-                    break;
-                case 1: //Take glass bottle from slot 1, add heavy cream to slot 3, play brewing stand sound
-                    entity.removeStack(1, 1);
-                    entity.setStack(3, new ItemStack(ModItems.HEAVY_CREAM,
-                            entity.getStack(3).getCount() + 1));
-                    entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
-                            SoundCategory.PLAYERS, 1f, 0.5f);
-                    break;
-                default: //Play fire extinguishing sound
+        switch (nextInt(0, 3)) { //Each option has a 33% chance
+            case 0 -> { //Take glass bottle from slot 1, add soya milk to slot 2, play brewing stand sound
+                entity.removeStack(1, 1);
+                entity.setStack(2, new ItemStack(ModItems.SOYA_MILK,
+                        entity.getStack(2).getCount() + 1));
+                entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
+                        SoundCategory.PLAYERS, 1f, 1.5f);
+            }
+            case 1 -> { //Take glass bottle from slot 1, add heavy cream to slot 3, play brewing stand sound
+                entity.removeStack(1, 1);
+                entity.setStack(3, new ItemStack(ModItems.HEAVY_CREAM,
+                        entity.getStack(3).getCount() + 1));
+                entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
+                        SoundCategory.PLAYERS, 1f, 0.5f);
+            }
+            default -> //Play fire extinguishing sound
                     entity.world.playSound(null, entity.getPos(), SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE,
                             SoundCategory.PLAYERS, 1f, 1f);
-            }
         }
-            entity.resetProgress();
+
         }
 
     private static boolean hasRecipe(SoyaSeparatorBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(entity.size());
+        /*SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
-        }
+        }*/
 
         boolean hasSoyaBeansInFirstSlot = entity.getStack(0).getItem() == ModItems.SOYA_BEANS;
         boolean hasGlassBottleInSecondSlot = entity.getStack(1).getItem() == Items.GLASS_BOTTLE;
-
-        return hasSoyaBeansInFirstSlot && hasGlassBottleInSecondSlot && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, ModItems.SOYA_MILK);
+        return hasSoyaBeansInFirstSlot && hasGlassBottleInSecondSlot;
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
