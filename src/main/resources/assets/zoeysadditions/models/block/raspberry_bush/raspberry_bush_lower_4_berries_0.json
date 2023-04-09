@@ -4,6 +4,7 @@
 	"texture_size": [24, 16],
 	"textures": {
 		"0": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_3",
+		"overlay": "zoeysadditions:block/raspberry_bush/raspberry_bush_overlay_0",
 		"particle": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_3"
 	},
 	"elements": [
@@ -25,6 +26,26 @@
 			"faces": {
 				"east": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0},
 				"west": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0}
+			}
+		},
+		{
+			"name": "overlay_ns",
+			"from": [-4, 0, 8],
+			"to": [20, 16, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#overlay"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#overlay"}
+			}
+		},
+		{
+			"name": "overlay_ew",
+			"from": [8, 0, -4],
+			"to": [8, 16, 20],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#overlay"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#overlay"}
 			}
 		}
 	]
