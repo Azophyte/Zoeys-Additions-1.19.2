@@ -29,13 +29,26 @@
   "block.zoeysadditions.raspberry_rhodolite_ore": "Raspberry Rhodolite Ore",
   "block.zoeysadditions.deepslate_raspberry_rhodolite_ore": "Deepslate Raspberry Rhodolite Ore",
   "block.zoeysadditions.raspberry_bush": "Raspberry Bush",
-  "block.zoeysadditions.soya_crops": "Soya Crops",
-  "block.zoeysadditions.soya_separator": "Soya Separator",
+  "block.zoeysadditions.soya_crop": "Soya Crop",
+  "block.zoeysadditions.soya_separator_copper": "Soya Separator",
+  "block.zoeysadditions.soya_separator_iron": "Ferrous Soya Separator",
+  "block.zoeysadditions.soya_separator_gold": "Gilded Soya Separator",
+  "block.zoeysadditions.soya_separator_netherite": "Perfected Soya Separator",
   "block.zoeysadditions.chorus_cake": "Chorus Cake",
   "block.zoeysadditions.blazing_bamboo": "Blazing Bamboo",
   "block.zoeysadditions.blazing_bamboo_drupe": "Blazing Bamboo Drupe",
+  "block.zoeysadditions.bamboo_brewing_stand": "Bamboo Brewing Stand",
 
   "itemGroup.zoeysadditions.zoeysadditions": "Zoey's Additions",
 
-  "entity.zoeysadditions.ladybeetle": "Ladybeetle"
+  "entity.zoeysadditions.ladybeetle": "Ladybeetle",
+
+  "container.zoeysadditions.soya_separator": "Soya Separator",
+  "container.zoeysadditions.soya_separator_copper": "Soya Separator",
+  "container.zoeysadditions.soya_separator_iron": "Ferrous Soya Separator",
+  "container.zoeysadditions.soya_separator_gold": "Gilded Soya Separator",
+  "container.zoeysadditions.soya_separator_netherite": "Perfected Soya Separator",
+  "container.zoeysadditions.bamboo_brewing_stand": "Bamboo Brewing Stand",
+
+  "subtitles.zoeysadditions.soya_separator_ambient": "Soya separator bubbles"
 }
