@@ -12,9 +12,20 @@
     "half=lower,age=3": {
       "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_3"
     },
-    "half=lower,age=4": {
-      "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_4"
-    },
+    "half=lower,age=4":[
+      {
+      "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_4_berries_0"
+      },
+      {
+      "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_4_berries_1"
+      },
+      {
+      "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_4_berries_2"
+      },
+      {
+        "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_lower_4_berries_3"
+      }
+    ],
     "half=upper,age=0": {
       "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_0"
     },
@@ -27,8 +38,19 @@
     "half=upper,age=3": {
       "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_3"
     },
-    "half=upper,age=4": {
-      "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_4"
-    }
+    "half=upper,age=4":[
+      {
+        "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_4_berries_0"
+      },
+      {
+        "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_4_berries_1"
+      },
+      {
+        "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_4_berries_2"
+      },
+      {
+        "model": "zoeysadditions:block/raspberry_bush/raspberry_bush_upper_4_berries_3"
+      }
+    ]
   }
 }
