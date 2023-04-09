@@ -34,6 +34,7 @@ public class ZoeysAdditions implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.LADY_BEETLE, LadyBeetleEntity.setAttributes());
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerAllScreenHandlers();
+		ModSounds.registerModSounds();
 		//Effect goes here
 		//ModPotions.registerPotions();
 
