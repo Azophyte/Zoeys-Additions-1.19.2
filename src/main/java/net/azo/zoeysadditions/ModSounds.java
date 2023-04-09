@@ -9,6 +9,9 @@ public class ModSounds {
     public static SoundEvent SOYA_SEPARATOR_AMBIENT = registerSoundEvent
             ("soya_separator_ambient");
 
+    public static SoundEvent SOYA_SEPARATOR_FINISHES = registerSoundEvent
+            ("soya_separator_finishes");
+
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = new Identifier(ZoeysAdditions.MOD_ID, name);
         return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent((id)));

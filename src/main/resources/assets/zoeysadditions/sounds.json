@@ -4,5 +4,11 @@
     "sounds": [
       "zoeysadditions:soya_separator/soya_separator_ambient"
     ]
+  },
+  "soya_separator_finishes": {
+    "subtitle": "subtitles.zoeysadditions.soya_separator_finishes",
+    "sounds": [
+      "zoeysadditions:soya_separator/soya_separator_finishes"
+    ]
   }
 }
