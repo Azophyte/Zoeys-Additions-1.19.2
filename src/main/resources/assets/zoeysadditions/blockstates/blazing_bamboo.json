@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": {"model":  "zoeysadditions:block/blazing_bamboo/blazing_bamboo"}
+    "blazing=false": {
+      "model": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_calm"
+    },
+    "blazing=true": {
+      "model": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_fire"
+    }
   }
 }
