@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "GPG",
+    "CPC",
     "PBP",
-    "GSG"
+    "CSC"
   ],
   "key": {
-    "G": {
-      "item": "minecraft:gold_nugget"
+    "C": {
+      "item": "minecraft:copper_ingot"
     },
     "P": {
       "tag": "minecraft:planks"
@@ -20,6 +20,6 @@
     }
   },
   "result": {
-    "item": "zoeysadditions:soya_separator"
+    "item": "zoeysadditions:soya_separator_copper"
   }
 }
