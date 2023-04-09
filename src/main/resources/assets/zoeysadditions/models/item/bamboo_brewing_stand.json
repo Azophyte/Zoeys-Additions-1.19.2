@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "zoeysadditions:item/bamboo_brewing_stand"
+  }
+}

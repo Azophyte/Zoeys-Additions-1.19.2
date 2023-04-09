@@ -1,0 +1,8 @@
+{
+  "soya_separator_ambient": {
+    "subtitle": "subtitles.zoeysadditions.soya_separator_ambient",
+    "sounds": [
+      "zoeysadditions:soya_separator/soya_separator_ambient"
+    ]
+  }
+}

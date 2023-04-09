@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zoeysadditions:block/soya_separator/soya_separator_copper"
+    },
+    "facing=south": {
+      "model": "zoeysadditions:block/soya_separator/soya_separator_copper",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "zoeysadditions:block/soya_separator/soya_separator_copper",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "zoeysadditions:block/soya_separator/soya_separator_copper",
+      "y": 90
+    }
+  }
+}
