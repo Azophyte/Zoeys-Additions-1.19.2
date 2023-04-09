@@ -1,7 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_drupe"
+		"1": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_drupe",
+		"particle": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_drupe"
 	},
 	"elements": [
 		{
