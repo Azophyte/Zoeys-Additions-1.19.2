@@ -24,7 +24,7 @@ public class ModItems {
     public static final Item BLAZING_BAMBOO_NUT = registerItem("blazing_bamboo_nut",
             new AliasedBlockItem(ModBlocks.BLAZING_BAMBOO_DRUPE_BLOCK, new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(3).saturationModifier(1)
-                            .statusEffect(new StatusEffectInstance(POISON, 15, 2), 100).build())));
+                            .statusEffect(new StatusEffectInstance(POISON, 300, 2), 100).build())));
     public static final Item RASPBERRY = registerItem("raspberry",
             new AliasedBlockItem(ModBlocks.RASPBERRY_BUSH_BLOCK, new FabricItemSettings().group(ModItemGroup.ZOEYSADDITIONS)
                     .food(new FoodComponent.Builder().hunger(1).saturationModifier(1).snack().build())));
