@@ -45,7 +45,20 @@ public class ModBlocks {
     public static final Block SOYA_CROP = registerBlockWithoutItem("soya_crop",
             new SoyaCrop(FabricBlockSettings.copyOf(Blocks.POTATOES)));
 
-    public static final Block SOYA_SEPARATOR_BLOCK = registerBlock("soya_separator",
+    /* Soya Separators */
+    public static final Block SOYA_SEPARATOR_COPPER = registerBlock("soya_separator_copper",
+            new SoyaSeparatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE)
+                    .hardness(1.8f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
+
+    public static final Block SOYA_SEPARATOR_IRON = registerBlock("soya_separator_iron",
+            new SoyaSeparatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE)
+                    .hardness(1.8f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
+
+    public static final Block SOYA_SEPARATOR_GOLD = registerBlock("soya_separator_gold",
+            new SoyaSeparatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE)
+                    .hardness(1.8f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
+
+    public static final Block SOYA_SEPARATOR_NETHERITE = registerBlock("soya_separator_netherite",
             new SoyaSeparatorBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE)
                     .hardness(1.8f).requiresTool()), ModItemGroup.ZOEYSADDITIONS);
 
@@ -54,11 +67,18 @@ public class ModBlocks {
             ModItemGroup.ZOEYSADDITIONS);
 
     public static final Block BLAZING_BAMBOO_BLOCK = registerBlock("blazing_bamboo",
-            new BlazingBambooBlock(FabricBlockSettings.of(Material.BAMBOO).sounds(BlockSoundGroup.BAMBOO)),
+            new BlazingBambooBlock(FabricBlockSettings.of(Material.BAMBOO)
+                    .sounds(BlockSoundGroup.BAMBOO).luminance(3)),
             ModItemGroup.ZOEYSADDITIONS);
 
     public static final Block BLAZING_BAMBOO_DRUPE_BLOCK = registerBlockWithoutItem("blazing_bamboo_drupe",
-            new BlazingBambooBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC).sounds(BlockSoundGroup.SHROOMLIGHT)));
+            new BlazingBambooDrupeBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC)
+                    .sounds(BlockSoundGroup.SHROOMLIGHT).luminance(14)));
+
+
+    public static final Block BAMBOO_BREWING_STAND = registerBlock("bamboo_brewing_stand",
+            new BambooBrewingStandBlock(FabricBlockSettings.of(Material.METAL)
+    .requiresTool().strength(0.5F).luminance((state) -> 1).nonOpaque()), ModItemGroup.ZOEYSADDITIONS);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
@@ -74,6 +94,5 @@ public class ModBlocks {
     }
     public static void registerModBlocks() {
         ZoeysAdditions.LOGGER.debug("Registering ModBlocks for " + ZoeysAdditions.MOD_ID);
-
     }
 }
