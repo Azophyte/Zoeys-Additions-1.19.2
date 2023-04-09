@@ -1,12 +1,17 @@
 TO DO LIST:
-    - Soya Separator title should be a translatable string
     - Use mixins to make the tea items use brewing stands to craft
     - Use mixins to make cake slices obtainable via sword
     - Get "programming socks"
     - Use mixins to make crops harvestable by right-clicking with hoe
     - Add #minecraft:bee_growables and #minecraft:crops tags to raspberry bushes and soya crops
-    - Adjust raspberry bushes texture as per Elo's criticism
-    - Add variation in raspberry bush overlay texture as per Al's suggestion
     - Start HRT
     - Redo soya crop textures entirely
     - Allow modded plants to be added to flower pots
+    - Replace all deprecated methods with up-to-date ones
+
+DONE list
+    - Adjust raspberry bushes texture as per Elo's criticism
+    - Add variation in raspberry bush overlay texture as per Al's suggestion
+    - Soya Separator title should be a translatable string
+    - Fix hoppers putting bottles into slot 0 and beans into slot 1 in soya separators
+    - Add upgrade for soya separator (decreases probability of failure - upgrade with smithing table)
