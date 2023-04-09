@@ -128,6 +128,10 @@ private final DefaultedList<ItemStack> inventory =
                     //AND there is a bottle available:
                     craftItem(entity, blockState);
                     entity.resetProgress();
+                    if(!hasRecipe(entity)){ //Plays this sound once the process is finished :)
+                        world.playSound(null, entity.getPos(), ModSounds.SOYA_SEPARATOR_FINISHES,
+                                SoundCategory.BLOCKS, 0.5f, 1f);
+                    }
                     markDirty(world, blockPos, blockState);
                 }
             }
@@ -139,17 +143,14 @@ private final DefaultedList<ItemStack> inventory =
             entity.removeStack(1, 1);
             entity.setStack(2, new ItemStack(ModItems.SOYA_MILK,
                     entity.getStack(2).getCount() + 1));
-            /*entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
-                    SoundCategory.PLAYERS, 0.5f, 1.5f);*/
+
         } else if (getRandom(blockState) < 12){
             entity.removeStack(1, 1);
             entity.setStack(3, new ItemStack(ModItems.HEAVY_CREAM,
                     entity.getStack(3).getCount() + 1));
-            /*entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
-                    SoundCategory.PLAYERS, 0.5f, 0.5f);*/
+
         } else {
-                    /*entity.world.playSound(null, entity.getPos(), SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE,
-                            SoundCategory.PLAYERS, 0.5f, 1f);*/
+            entity.removeStack(1, 1);
         }
 
     }
