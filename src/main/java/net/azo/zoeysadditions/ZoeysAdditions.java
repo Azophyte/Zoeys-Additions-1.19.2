@@ -35,8 +35,5 @@ public class ZoeysAdditions implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerAllScreenHandlers();
 		ModSounds.registerModSounds();
-		//Effect goes here
-		//ModPotions.registerPotions();
-
 	}
 }
