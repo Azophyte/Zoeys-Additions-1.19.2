@@ -50,5 +50,6 @@
   "container.zoeysadditions.soya_separator_netherite": "Perfected Soya Separator",
   "container.zoeysadditions.bamboo_brewing_stand": "Bamboo Brewing Stand",
 
-  "subtitles.zoeysadditions.soya_separator_ambient": "Soya separator bubbles"
+  "subtitles.zoeysadditions.soya_separator_ambient": "Soya separator bubbles",
+  "subtitles.zoeysadditions.soya_separator_finishes":"Soya separator finishes"
 }
