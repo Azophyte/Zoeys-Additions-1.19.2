@@ -1,7 +1,7 @@
 package net.azo.zoeysadditions.block.custom;
 
-import net.azo.zoeysadditions.block.entity.ModBlockEntities;
-import net.azo.zoeysadditions.block.entity.SoyaSeparatorBlockEntity;
+import net.azo.zoeysadditions.block.ModBlocks;
+import net.azo.zoeysadditions.block.entity.*;
 import net.azo.zoeysadditions.screen.SoyaSeparatorScreenHandler;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -9,14 +9,18 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,6 +62,8 @@ public class SoyaSeparatorBlock extends BlockWithEntity implements BlockEntityPr
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         return SoyaSeparatorScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
     }
+
+
     /* BLOCK ENTITY STUFF */
     @Override
     public BlockRenderType getRenderType(BlockState state){
@@ -91,15 +97,33 @@ public class SoyaSeparatorBlock extends BlockWithEntity implements BlockEntityPr
 
         return ActionResult.SUCCESS;
     }
+
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new SoyaSeparatorBlockEntity(pos, state);
+        if (state.getBlock() == ModBlocks.SOYA_SEPARATOR_COPPER){
+            return new SoyaSeparatorCopperBlockEntity(pos, state);
+        } else if (state.getBlock() == ModBlocks.SOYA_SEPARATOR_IRON){
+            return new SoyaSeparatorIronBlockEntity(pos, state);
+        } else if (state.getBlock() == ModBlocks.SOYA_SEPARATOR_GOLD){
+            return new SoyaSeparatorGoldBlockEntity(pos, state);
+        } else {
+            return new SoyaSeparatorNetheriteBlockEntity(pos, state);
+        }
+
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.SOYA_SEPARATOR, SoyaSeparatorBlockEntity::tick);
+        if (state.getBlock() == ModBlocks.SOYA_SEPARATOR_COPPER){
+            return checkType(type, ModBlockEntities.SOYA_SEPARATOR_COPPER, SoyaSeparatorBlockEntity::tick);
+        } else if (state.getBlock() == ModBlocks.SOYA_SEPARATOR_IRON){
+            return checkType(type, ModBlockEntities.SOYA_SEPARATOR_IRON, SoyaSeparatorBlockEntity::tick);
+        } else if (state.getBlock() == ModBlocks.SOYA_SEPARATOR_GOLD){
+            return checkType(type, ModBlockEntities.SOYA_SEPARATOR_GOLD, SoyaSeparatorBlockEntity::tick);
+        } else {
+            return checkType(type, ModBlockEntities.SOYA_SEPARATOR_NETHERITE, SoyaSeparatorBlockEntity::tick);
+        }
     }
 }

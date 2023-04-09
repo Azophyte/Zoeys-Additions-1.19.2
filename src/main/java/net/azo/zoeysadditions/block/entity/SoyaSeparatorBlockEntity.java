@@ -1,9 +1,13 @@
 package net.azo.zoeysadditions.block.entity;
 
+import net.azo.zoeysadditions.ModSounds;
+import net.azo.zoeysadditions.block.ModBlocks;
 import net.azo.zoeysadditions.item.ModItems;
 import net.azo.zoeysadditions.screen.SoyaSeparatorScreenHandler;
+import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -20,6 +24,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,8 +41,9 @@ private final DefaultedList<ItemStack> inventory =
 
 
 
-    public SoyaSeparatorBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.SOYA_SEPARATOR, pos, state);
+
+    public SoyaSeparatorBlockEntity(BlockEntityType blockEntity, BlockPos pos, BlockState state) {
+        super(blockEntity, pos, state);
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
                 switch (index) {
@@ -65,10 +71,8 @@ private final DefaultedList<ItemStack> inventory =
         return this.inventory;
     }
 
-    @Override
     public Text getDisplayName() {
-        return Text.literal("Soya Separator");
-        //MAKE ME TRANSLATABLE!!!
+        return Text.translatable("container.zoeysadditions.soya_separator");
     }
 
     @Nullable
@@ -95,6 +99,7 @@ private final DefaultedList<ItemStack> inventory =
         this.progress = 0;
     }
 
+
     public static void tick(World world, BlockPos blockPos, BlockState blockState, SoyaSeparatorBlockEntity entity) {
         if (world.isClient()){
             return;
@@ -103,8 +108,12 @@ private final DefaultedList<ItemStack> inventory =
             entity.removeStack(0, 1);
             entity.progress++;
             markDirty(world, blockPos, blockState);
+        } else if (entity.progress == 1){
+            world.playSound(null, entity.getPos(), ModSounds.SOYA_SEPARATOR_AMBIENT,
+                    SoundCategory.BLOCKS, 0.3f, 1f);
+            entity.progress++;
 
-        } else if (entity.progress >= 1 && entity.progress < entity.maxProgress) {
+        } else if (entity.progress >= 2 && entity.progress < entity.maxProgress) {
             entity.progress++;
             markDirty(world, blockPos, blockState);
         } else {
@@ -117,7 +126,7 @@ private final DefaultedList<ItemStack> inventory =
                     //IF Slot one is either empty or contains less than a stack of soya milk
                     //AND slot two is either empty or contains less than a stack of heavy cream
                     //AND there is a bottle available:
-                    craftItem(entity);
+                    craftItem(entity, blockState);
                     entity.resetProgress();
                     markDirty(world, blockPos, blockState);
                 }
@@ -125,41 +134,38 @@ private final DefaultedList<ItemStack> inventory =
         }
     }
 
-    private static void craftItem(SoyaSeparatorBlockEntity entity) {
-        /*SimpleInventory inventory = new SimpleInventory(entity.size());
-        for (int i = 0; i < entity.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
-        }*/
-            //entity.removeStack(0, 1);
-
-        switch (nextInt(0, 3)) { //Each option has a 33% chance
-            case 0 -> { //Take glass bottle from slot 1, add soya milk to slot 2, play brewing stand sound
-                entity.removeStack(1, 1);
-                entity.setStack(2, new ItemStack(ModItems.SOYA_MILK,
-                        entity.getStack(2).getCount() + 1));
-                entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
-                        SoundCategory.PLAYERS, 1f, 1.5f);
-            }
-            case 1 -> { //Take glass bottle from slot 1, add heavy cream to slot 3, play brewing stand sound
-                entity.removeStack(1, 1);
-                entity.setStack(3, new ItemStack(ModItems.HEAVY_CREAM,
-                        entity.getStack(3).getCount() + 1));
-                entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
-                        SoundCategory.PLAYERS, 1f, 0.5f);
-            }
-            default -> //Play fire extinguishing sound
-                    entity.world.playSound(null, entity.getPos(), SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE,
-                            SoundCategory.PLAYERS, 1f, 1f);
+    private static void craftItem(SoyaSeparatorBlockEntity entity, BlockState blockState){
+        if (getRandom(blockState) < 6){
+            entity.removeStack(1, 1);
+            entity.setStack(2, new ItemStack(ModItems.SOYA_MILK,
+                    entity.getStack(2).getCount() + 1));
+            /*entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
+                    SoundCategory.PLAYERS, 0.5f, 1.5f);*/
+        } else if (getRandom(blockState) < 12){
+            entity.removeStack(1, 1);
+            entity.setStack(3, new ItemStack(ModItems.HEAVY_CREAM,
+                    entity.getStack(3).getCount() + 1));
+            /*entity.world.playSound(null, entity.getPos(), SoundEvents.BLOCK_BREWING_STAND_BREW,
+                    SoundCategory.PLAYERS, 0.5f, 0.5f);*/
+        } else {
+                    /*entity.world.playSound(null, entity.getPos(), SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE,
+                            SoundCategory.PLAYERS, 0.5f, 1f);*/
         }
 
-        }
+    }
 
+    private static int getRandom(BlockState blockState) {
+        if (blockState.getBlock() == ModBlocks.SOYA_SEPARATOR_COPPER) {
+            return nextInt(0, 30); //Chance of success: 40%
+        } else if (blockState.getBlock() == ModBlocks.SOYA_SEPARATOR_IRON) {
+            return nextInt(0, 20); //Chance of success: 60%
+        } else if (blockState.getBlock() == ModBlocks.SOYA_SEPARATOR_GOLD) {
+            return nextInt(0, 15); //Chance of success: 80%
+        } else {
+            return nextInt(0, 12); //Chance of failure: 0%
+        }
+    }
     private static boolean hasRecipe(SoyaSeparatorBlockEntity entity) {
-        /*SimpleInventory inventory = new SimpleInventory(entity.size());
-        for (int i = 0; i < entity.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
-        }*/
-
         boolean hasSoyaBeansInFirstSlot = entity.getStack(0).getItem() == ModItems.SOYA_BEANS;
         boolean hasGlassBottleInSecondSlot = entity.getStack(1).getItem() == Items.GLASS_BOTTLE;
         return hasSoyaBeansInFirstSlot && hasGlassBottleInSecondSlot;
@@ -171,5 +177,16 @@ private final DefaultedList<ItemStack> inventory =
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
         return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+    }
+
+    /* HOPPER STUFF */
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
+        return (slot == 0 && stack.isOf(ModItems.SOYA_BEANS))
+                || (slot == 1 && stack.isOf(Items.GLASS_BOTTLE));
+    }
+
+    public boolean canExtract(int slot, ItemStack stack, Direction dir) {
+        return (slot == 2 && stack.isOf(ModItems.SOYA_MILK))
+                || (slot == 3 && stack.isOf(ModItems.HEAVY_CREAM));
     }
 }
