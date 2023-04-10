@@ -1,10 +1,9 @@
 package net.azo.zoeysadditions.block.entity;
 
-import net.azo.zoeysadditions.ModSounds;
+import net.azo.zoeysadditions.audio.ModSounds;
 import net.azo.zoeysadditions.block.ModBlocks;
 import net.azo.zoeysadditions.item.ModItems;
 import net.azo.zoeysadditions.screen.SoyaSeparatorScreenHandler;
-import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -20,7 +19,6 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;

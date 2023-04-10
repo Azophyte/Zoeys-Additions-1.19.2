@@ -6,8 +6,7 @@ TO DO LIST:
     - Start HRT
     - Allow modded plants to be added to flower pots
     - Replace all deprecated methods with up-to-date ones
-    - Add advancements
-    - Update Raspberry Rhodolite and Benitoite Block textures
+
 
 DONE list
     - Adjust raspberry bushes texture as per Elo's criticism
@@ -18,3 +17,5 @@ DONE list
     - Add #minecraft:bee_growables and #minecraft:crops tags to raspberry bushes and soya crops
     - Update raspberry texture
     - Redo soya crop textures entirely
+    - Add advancements
+    - Update Raspberry Rhodolite and Benitoite Block textures

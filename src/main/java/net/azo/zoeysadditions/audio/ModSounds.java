@@ -1,5 +1,6 @@
-package net.azo.zoeysadditions;
+package net.azo.zoeysadditions.audio;
 
+import net.azo.zoeysadditions.ZoeysAdditions;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
