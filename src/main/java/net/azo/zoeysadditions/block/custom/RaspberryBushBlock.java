@@ -39,10 +39,10 @@ import static net.minecraft.block.enums.DoubleBlockHalf.UPPER;
 public class RaspberryBushBlock extends Block implements Fertilizable {
     public static final EnumProperty<DoubleBlockHalf> HALF = Properties.DOUBLE_BLOCK_HALF;
     public static final IntProperty AGE = Properties.AGE_4;
-    private static final VoxelShape SHAPE_0 = Block.createCuboidShape(4.0, 0.0, 3.0, 12.0, 8.0, 12.0);;
-    private static final VoxelShape SHAPE_1 = Block.createCuboidShape(3.0, 0.0, 2.0, 13.0, 10.0, 13.0);;
-    private static final VoxelShape SHAPE_2 = Block.createCuboidShape(2.0, 0.0, 1.0, 14.0, 14.0, 14.0);;
-    private static final VoxelShape SHAPE_3 = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);;
+    private static final VoxelShape SHAPE_0 = Block.createCuboidShape(4.0, 0.0, 3.0, 12.0, 8.0, 12.0);
+    private static final VoxelShape SHAPE_1 = Block.createCuboidShape(3.0, 0.0, 2.0, 13.0, 10.0, 13.0);
+    private static final VoxelShape SHAPE_2 = Block.createCuboidShape(2.0, 0.0, 1.0, 14.0, 14.0, 14.0);
+    private static final VoxelShape SHAPE_3 = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
     public RaspberryBushBlock(AbstractBlock.Settings settings) {
         super(settings);
@@ -52,7 +52,7 @@ public class RaspberryBushBlock extends Block implements Fertilizable {
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
         return new ItemStack(ModItems.RASPBERRY);
     }
-
+    //How come this method is deprecated here, but it's perfectly fine in the soya crop method ??? WHAT???
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(AGE)) {
             case 0 -> SHAPE_0;
