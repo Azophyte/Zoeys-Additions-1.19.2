@@ -4,7 +4,6 @@ TO DO LIST:
     - Get "programming socks"
     - Use mixins to make crops harvestable by right-clicking with hoe
     - Start HRT
-    - Redo soya crop textures entirely
     - Allow modded plants to be added to flower pots
     - Replace all deprecated methods with up-to-date ones
     - Add advancements
@@ -17,3 +16,5 @@ DONE list
     - Fix hoppers putting bottles into slot 0 and beans into slot 1 in soya separators
     - Add upgrade for soya separator (decreases probability of failure - upgrade with smithing table)
     - Add #minecraft:bee_growables and #minecraft:crops tags to raspberry bushes and soya crops
+    - Update raspberry texture
+    - Redo soya crop textures entirely
