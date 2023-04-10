@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soya_beans": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zoeysadditions:soya_beans"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_soya_beans"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "zoeysadditions:soya_separator_copper",
+      "zoeysadditions:soya_separator_iron",
+      "zoeysadditions:soya_separator_gold"
+    ]
+  }
+}

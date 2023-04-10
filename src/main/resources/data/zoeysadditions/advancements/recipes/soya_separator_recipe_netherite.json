@@ -1,0 +1,30 @@
+      {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_lodestone_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "minecraft:lodestone"
+            }
+          },
+          "has_soya_separator_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "zoeysadditions:soya_separator_copper"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_lodestone_recipe"
+          ],
+          [
+            "has_soya_separator_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "zoeysadditions:soya_separator_netherite"
+          ]
+        }
+      }
