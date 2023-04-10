@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "zoeysadditions:soya_separator_gold"
+    },
+    "title": {
+      "translate": "advancements.zoeysadditions.get_soya_separator_gold.title"
+    },
+    "description": {
+      "translate": "advancements.zoeysadditions.get_soya_separator_gold.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zoeysadditions:get_soya_separator",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zoeysadditions:soya_separator_gold"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 51
+  }
+}

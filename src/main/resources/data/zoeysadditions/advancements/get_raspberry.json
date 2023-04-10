@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "zoeysadditions:raspberry"
+    },
+    "title": {
+      "translate": "advancements.zoeysadditions.get_raspberry.title"
+    },
+    "description": {
+      "translate": "advancements.zoeysadditions.get_raspberry.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zoeysadditions:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zoeysadditions:raspberry"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 17
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "zoeysadditions:raspberry_rhodolite"
+    },
+    "title": {
+      "translate": "advancements.zoeysadditions.root.title"
+    },
+    "description": {
+      "translate": "advancements.zoeysadditions.root.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "background": "zoeysadditions:textures/gui/advancements/backgrounds/base.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zoeysadditions:raspberry"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+

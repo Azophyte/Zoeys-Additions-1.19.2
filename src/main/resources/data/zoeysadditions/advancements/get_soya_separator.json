@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "zoeysadditions:soya_separator_copper"
+    },
+    "title": {
+      "translate": "advancements.zoeysadditions.get_soya_separator.title"
+    },
+    "description": {
+      "translate": "advancements.zoeysadditions.get_soya_separator.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zoeysadditions:get_soya_beans",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zoeysadditions:soya_separator_copper"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 17
+  }
+}

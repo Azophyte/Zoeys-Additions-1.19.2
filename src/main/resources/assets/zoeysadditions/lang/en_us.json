@@ -51,5 +51,18 @@
   "container.zoeysadditions.bamboo_brewing_stand": "Bamboo Brewing Stand",
 
   "subtitles.zoeysadditions.soya_separator_ambient": "Soya separator bubbles",
-  "subtitles.zoeysadditions.soya_separator_finishes":"Soya separator finishes"
+  "subtitles.zoeysadditions.soya_separator_finishes":"Soya separator ceases",
+
+  "advancements.zoeysadditions.root.title": "Zoey's Additions",
+  "advancements.zoeysadditions.root.description": ":3",
+  "advancements.zoeysadditions.get_soya_beans.title": "Bean",
+  "advancements.zoeysadditions.get_soya_beans.description": "Acquire your first Soya Beans",
+  "advancements.zoeysadditions.get_raspberry.title": "So Sweet!",
+  "advancements.zoeysadditions.get_raspberry.description": "Acquire your first Raspberry",
+  "advancements.zoeysadditions.get_soya_separator.title": "Dairy Alternatives!",
+  "advancements.zoeysadditions.get_soya_separator.description": "Build a Soya Separator to process some Soya Beans",
+  "advancements.zoeysadditions.get_soya_separator_gold.title": "Advancing Consistency",
+  "advancements.zoeysadditions.get_soya_separator_gold.description": "Upgrade a Soya Separator at a smithing table with Iron and then Gold",
+  "advancements.zoeysadditions.get_soya_separator_netherite.title": "ANYTHING FOR THE CREAM",
+  "advancements.zoeysadditions.get_soya_separator_netherite.description": "Upgrade a Soya Separator with a Netherite Ingot"
 }

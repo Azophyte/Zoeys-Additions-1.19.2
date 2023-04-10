@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "zoeysadditions:soya_beans"
+    },
+    "title": {
+      "translate": "advancements.zoeysadditions.get_soya_beans.title"
+    },
+    "description": {
+      "translate": "advancements.zoeysadditions.get_soya_beans.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zoeysadditions:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zoeysadditions:soya_beans"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 17
+  }
+}
