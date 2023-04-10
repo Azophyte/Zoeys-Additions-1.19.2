@@ -11,7 +11,6 @@ import net.azo.zoeysadditions.util.ModLootTableModifiers;
 import net.azo.zoeysadditions.world.feature.ModConfiguredFeatures;
 import net.azo.zoeysadditions.world.gen.ModOreGeneration;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
