@@ -1,10 +1,10 @@
 {
   "variants": {
-    "blazing=false": {
-      "model": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_calm"
+    "is_top=true": {
+      "model": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_pileus"
     },
-    "blazing=true": {
-      "model": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_fire"
+    "is_top=false": {
+      "model": "zoeysadditions:block/blazing_bamboo/blazing_bamboo_culm"
     }
   }
 }

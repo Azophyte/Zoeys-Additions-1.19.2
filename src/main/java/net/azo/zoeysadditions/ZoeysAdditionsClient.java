@@ -1,12 +1,15 @@
 package net.azo.zoeysadditions;
 
 import net.azo.zoeysadditions.block.ModBlocks;
+import net.azo.zoeysadditions.block.entity.ModBlockEntities;
+import net.azo.zoeysadditions.block.entity.client.JigglyCakeRenderer;
 import net.azo.zoeysadditions.entity.ModEntities;
 import net.azo.zoeysadditions.entity.client.LadyBeetleRenderer;
 import net.azo.zoeysadditions.screen.ModScreenHandlers;
 import net.azo.zoeysadditions.screen.SoyaSeparatorScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.color.world.BiomeColors;
@@ -21,7 +24,6 @@ public class ZoeysAdditionsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RASPBERRY_BUSH_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOYA_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLAZING_BAMBOO_BLOCK, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLAZING_BAMBOO_DRUPE_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BAMBOO_BREWING_STAND, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOYA_SEPARATOR_COPPER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOYA_SEPARATOR_IRON, RenderLayer.getCutout());
@@ -38,5 +40,7 @@ public class ZoeysAdditionsClient implements ClientModInitializer {
         }, ModBlocks.RASPBERRY_BUSH_BLOCK);
 
         HandledScreens.register(ModScreenHandlers.SOYA_SEPARATOR_SCREEN_HANDLER, SoyaSeparatorScreen :: new);
+
+        BlockEntityRendererRegistry.register(ModBlockEntities.JIGGLY_CAKE, JigglyCakeRenderer::new);
     }
 }

@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.jiggly_cake.jiggle": {
+			"animation_length": 0.79167,
+			"bones": {
+				"jiggly_cake": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.0833": {
+							"vector": [1.1, 0.7, 1.1],
+							"easing": "linear"
+						},
+						"0.7917": {
+							"vector": [1, 1, 1],
+							"easing": "easeInElastic",
+							"easingArgs": [8]
+						}
+					}
+				}
+			}
+		},
+		"animation.jiggly_cake.jiggle_big": {
+			"animation_length": 1,
+			"bones": {
+				"jiggly_cake": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.0417": {
+							"vector": [1.2, 0.6, 1.2],
+							"easing": "linear"
+						},
+						"1.0": {
+							"vector": [1, 1, 1],
+							"easing": "easeInElastic",
+							"easingArgs": [7]
+						}
+					}
+				}
+			}
+		},
+		"animation.jiggly_cake.idle": {
+			"loop": true
+		}
+	},
+	"geckolib_format_version": 2
+}

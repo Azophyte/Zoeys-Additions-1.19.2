@@ -71,15 +71,14 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.BAMBOO).luminance(3)),
             ModItemGroup.ZOEYSADDITIONS);
 
-    public static final Block BLAZING_BAMBOO_DRUPE_BLOCK = registerBlockWithoutItem("blazing_bamboo_drupe",
-            new BlazingBambooDrupeBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC)
-                    .sounds(BlockSoundGroup.SHROOMLIGHT).luminance(14)));
-
-
     public static final Block BAMBOO_BREWING_STAND = registerBlock("bamboo_brewing_stand",
             new BambooBrewingStandBlock(FabricBlockSettings.of(Material.METAL)
     .requiresTool().strength(0.5F).luminance((state) -> 1).nonOpaque()), ModItemGroup.ZOEYSADDITIONS);
 
+    public static final Block JIGGLY_CAKE_BLOCK = registerBlock("jiggly_cake",
+            new JigglyCakeBlock(FabricBlockSettings.of(Material.CAKE)
+                    .sounds(BlockSoundGroup.WOOL)
+                    .strength(0.5F).nonOpaque()), ModItemGroup.ZOEYSADDITIONS);
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
         return Registry.register(Registry.BLOCK, new Identifier(ZoeysAdditions.MOD_ID, name), block);

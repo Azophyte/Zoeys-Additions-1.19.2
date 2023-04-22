@@ -65,17 +65,6 @@ public class LadyBeetleEntity extends AnimalEntity implements IAnimatable, Flutt
 
 
     @Override
-
-    /*protected void initGoals() {
-        this.goalSelector.add(0, new EscapeDangerGoal(this, 1.5));
-        this.goalSelector.add(1, new SwimGoal(this));
-        this.goalSelector.add(2, new WanderNearTargetGoal(this, 0.8, 3));
-        this.goalSelector.add(3, new FlyGoal(this,1));
-        this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
-        this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 3.0F));
-        this.goalSelector.add(6, new LookAroundGoal(this));
-        this.goalSelector.add(7, new WanderAroundFarGoal(this, 0.8));
-    }*/
     protected void initGoals(){
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25));

@@ -15,6 +15,8 @@ public class ModBlockEntities {
     public static BlockEntityType<SoyaSeparatorNetheriteBlockEntity> SOYA_SEPARATOR_NETHERITE;
     public static BlockEntityType<BambooBrewingStandBlockEntity> BAMBOO_BREWING_STAND;
 
+    public static BlockEntityType<JigglyCakeBlockEntity> JIGGLY_CAKE;
+
     public static void registerBlockEntities() {
         SOYA_SEPARATOR_COPPER = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(ZoeysAdditions.MOD_ID, "soya_separator_copper"),
@@ -40,5 +42,12 @@ public class ModBlockEntities {
                 new Identifier(ZoeysAdditions.MOD_ID, "bamboo_blaze_stand"),
                 FabricBlockEntityTypeBuilder.create(BambooBrewingStandBlockEntity::new,
                         ModBlocks.BAMBOO_BREWING_STAND).build(null));
+
+        JIGGLY_CAKE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(ZoeysAdditions.MOD_ID, "jiggly_cake"),
+                FabricBlockEntityTypeBuilder.create(JigglyCakeBlockEntity::new,
+                        ModBlocks.JIGGLY_CAKE_BLOCK).build(null));
+
+
     }
 }
