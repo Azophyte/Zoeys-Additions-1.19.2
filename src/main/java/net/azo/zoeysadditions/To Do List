@@ -1,4 +1,8 @@
 TO DO LIST:
+    - Make blazing bamboo have random offset
+    - Make blazing bamboo drop itself
+    - Add blazing bamboo spore item
+    - Reimplement jiggly cake completely
     - Use mixins to make the tea items use brewing stands to craft
     - Use mixins to make cake slices obtainable via sword
     - Get "programming socks"
